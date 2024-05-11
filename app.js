@@ -7,7 +7,7 @@ const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 
 
