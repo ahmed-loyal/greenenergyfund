@@ -1,0 +1,794 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+:root {
+    --primary-color: #2b9348;
+}
+
+body{
+    background-color: #F7F8FA;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Acme", sans-serif;
+}
+
+.mt-20{
+    margin-top:20px;
+}
+
+.mt-10{
+    margin-top: 15px;
+}
+
+.header{
+    background-color: #FFFFFF;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+.header h1{
+    background-color: #FFFFFF;
+    font-family: "Acme", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.home-btn{
+    color: #FFFFFF;
+    background-color: #2b9348;
+    font-size: 1rem;
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #2b9348;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home-btn:hover{
+    background-color: #008000;
+    color: #ebf2fa;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.loan-banner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.loan-banner div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px auto;
+    
+}
+
+.loan-banner img{
+    display: block;
+    margin: auto;
+    max-width: 80%;
+    height: auto;
+}
+
+.loan-banner a{
+    color: #000017;
+    font-size: 1.25rem;
+    display: inline-block;
+    width: 60%;
+    height: auto;
+    text-decoration: none;
+    background-color: #2b9348;
+    padding: 10px 30px;
+    border: 1px solid #2b9348;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+.loan-banner span{
+    font-size: 0.90rem;
+    color: white;
+}
+
+.loan-banner a:hover{
+    background-color: #008000;
+    transition: all 300ms ease-in-out;
+}
+
+.records-section{
+    background-color: #2b9348;
+    color: #FFFFFF;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 150px;
+}
+
+
+.records-big-word{
+    font-size: 2rem;
+}
+
+.records-small-word{
+    font-size: 1rem;
+}
+
+.records-icon{
+    max-width: 3.20rem;
+    height: auto;
+}
+
+
+/*About Section and Others styles*/
+.about-section{
+  text-align: center;
+}
+
+.about-section div{
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.about-section p{
+  font-size: 1rem;
+  align-items: justify;
+}
+
+.about-section h1{
+  font-size: 1.50rem;
+}
+
+.about-link{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bolder;
+  font-size: 1rem;
+}
+/*About Sectione end*/
+
+
+/*Offer Section*/
+.offer-section{
+  text-align: center;
+}
+
+.offer-section h1{
+  margin-top: 10px;
+  font-size: 1.50rem;
+}
+
+.offer-section a{
+  display: inline-block;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 35px;
+  padding: 0.70rem 2rem;
+  font-size: 0.80rem;
+  margin-top: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.offer-section a:hover{
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  box-shadow: 0 1px 2px 0 #2b9348, 0 3px 5px 0 #2b9348;
+  transition: all 300ms ease-in-out;
+}
+
+.each-offer{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: start;
+  margin: 10px auto;
+}
+
+.each-offer > div{
+  width: 23%;
+  height: auto;
+  border: 1px solid gainsboro;
+  margin: 15px 1px;
+  padding: 20px;
+  border-radius:10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.each-offer > div h3{
+  font-size: 1.10rem;
+}
+
+.each-offer > div p{
+  font-size: 0.90rem;
+  margin-top: 5px;
+}
+/*Offer Section end*/
+
+.cert-img{
+    font-size: 1.10rem;
+    text-align: center;
+    margin: 110px auto;
+    max-width: 60%;
+    height: auto;
+    padding: 30px 1px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.cert-img img{
+    display: block;
+    max-width: 50%;
+    height: auto;
+    margin: auto;
+}
+
+.terms-section{
+    text-align: center;
+}
+
+.terms-section a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #2b9348;
+}
+
+footer{
+    color: #FFFFFF;
+    font-size: 1.10rem;
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #2b9348;
+}
+
+.copyright{
+font-weight: bolder;
+}
+
+
+
+/*       Greenery Form styles    */
+.steps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.how-to{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 10px 10px;  
+}
+
+.process{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step-icon{
+    width:10%;
+    height: auto ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2b9348;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 12px;
+
+}
+
+.icon{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+    color: #FFFFFF;
+}
+
+.procedure{
+    margin-left: 20px;
+    flex: 78%;
+}
+
+.procedure > p{
+    font-size: 1rem;
+    text-align: justify;
+}
+
+
+
+/*Form styles */
+
+.form-text{
+    text-align: justify; 
+    margin-top:50px; 
+    font-size: 0.70rem;
+}
+
+.form-section{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.required{
+    color: red;
+    font-weight: lighter;
+    font-size: 0.g5rem;
+}
+
+.name-header{
+    width: 98%;
+    border-bottom: 1px solid #adb5bd;
+}
+
+.name-input{
+    flex: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-input > div{
+    flex: 50%;
+    height: auto;
+}
+
+.name-input label{
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+}
+
+.name-input input{
+    height: 35px;
+    width: 95%;
+    color: #495057;
+    border: none;
+    border-bottom: 1px solid #495057;
+    cursor: pointer;
+}
+
+.name-input input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 1px 1px 0 #2b9348, 0 1px 2px 0 #2b9348;
+    transition: all 300ms ease-in-out;
+}
+
+.home-address{
+    flex: 100%;
+    height: auto;
+}
+
+.home-address label{
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+}
+
+.home-address > input{
+    height: 35px;
+    width: 98%;
+    color: #495057;
+    border: none;
+    border-bottom: 1px solid #495057;
+    cursor: pointer;
+}
+
+.home-address > input:focus{
+    outline: none;
+    box-shadow: 0 1px 1px 0 #2b9348, 0 1px 2px 0 #2b9348;
+    transition: all 300ms ease-in-out;
+}
+.form-select{
+  height: 35px;
+  width: 95%;
+  border: none;
+  border-bottom: 1px solid #495057;
+  cursor: pointer;
+}
+
+
+/*Form Radio start*/ 
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 40px;
+  }
+  
+  .radio-tile-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .input-container {
+    position: relative;
+    height: 7rem;
+    width: 7rem;
+    margin: 1.5rem;
+  }
+  
+  .input-container input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+  }
+  
+  .input-container .radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .input-container i{
+    color: var(--primary-color);
+    font-size: 3rem;
+  }
+
+  .input-container h4{
+    text-align: center;
+    padding-top: 0.10rem;
+    font-size: 0.80rem;
+    font-weight: 600;
+  }
+  
+  input:checked+.radio-tile {
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 12px var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  input:hover+.radio-tile {
+    box-shadow: 0 0 12px var(--primary-color);
+    transition: all 300ms ease-in-out;
+  }
+  
+  input:checked+.radio-tile+h4 {
+    color: var(--primary-color);
+    padding-top: 0.50rem;
+    transition: padding-top 300ms ease-in-out;
+  }
+/* Form Radio end*/
+
+
+/*Form Progress bar*/
+ .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    counter-reset: step;
+    margin: 1rem 0 1.2rem;
+  }
+
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.11rem;
+    width: 100%;
+    background-color: #dcdcdc;
+  }
+
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+
+  .progress-step {
+    width: 3.1875rem;
+    height: 3.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.70rem;
+    padding: 0.50em;
+    font-size: 1em;
+    z-index: 0;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 1.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+  }
+/*Form progress end*/
+
+  
+/* Form Steps */  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+/*Form steps end*/
+  
+/* Form Button start */
+  .btns-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:10px auto ;
+  }
+  
+  .btn {
+    padding: 0.75rem;
+    width: 30%;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: 1px solid #2b9348;
+    text-align: center;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .btn:hover {
+    background-color: #008000;
+    color: #ebf2fa;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+  }
+
+  .btn-width-50 {
+    width: 50%;
+  }
+/*Form btn end*/
+
+
+/* Manage assets styles */
+.connect{
+  padding: 20px 50px;
+}
+
+.connect p{
+  margin:8px 0;
+  font-size: 1.2rem;
+}
+.form div{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 15px auto;
+}
+
+.form div input{
+  margin-top: 5px;
+  width: 50%;
+  height: 2rem;
+  padding: 10px;
+}
+
+.form div textarea{
+  margin-top: 5px;
+  width: 50%;
+  height: 6rem;
+  padding: 10px;
+}
+
+.consult-btn{
+  font-size: 1rem;
+  padding: 0.75rem;
+  width: 15%;
+  display: block;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border: 1px solid #2b9348;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.consult-btn:hover {
+  background-color: #008000;
+  color: #ebf2fa;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+/* meet out team */
+.member{
+  padding: 10px;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.member img{
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+
+/* @ Media Query */
+@media screen and (max-width: 600px) {
+    .header h1{
+      font-size: 1.5rem;
+    }
+
+    .loan-banner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loan-banner div{
+        width: 100%;
+        height: auto;
+    }
+
+    .loan-banner img {
+        display: block;
+        max-width: 90%;
+        height: auto;
+        margin: auto;
+    }
+
+    .loan-banner a{
+        display: inline-block;
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+    }
+
+    .records-section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .records-section div{
+        margin-top: 20px;
+    }
+
+    .records-section div{
+        margin:20px auto;
+    }
+
+    .each-offer{
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .each-offer > div{
+      width: 80%;
+      margin: 15px auto;
+    }
+    
+
+    /* Apply form page*/
+    .steps{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+
+    .step-icon{
+      width:12%;
+    }
+
+    .how-to{
+        width: 100%;
+    }
+
+    .progress-step {
+      width: 2.1875rem;
+      height: 2.1875rem;
+    }
+    .name-input > div{
+        flex: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .name-header{
+        width: 95%;
+    }
+
+    .home-address > input{
+        width: 95%;
+    }
+
+    .form div input{
+      width: 100%
+    }
+
+    .form div textarea{
+      width: 100%
+    }
+    
+    .consult-btn{
+      width: 50%;
+      margin: auto;
+    }
+
+  }

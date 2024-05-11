@@ -1,0 +1,10 @@
+<!--Admin header-->
+<header id="header">
+  <i class="fas fa-bars" id="nav-toggler"></i>
+  <div>
+    <% if (user) { %>
+      <i class="fas fa-user-alt"></i>
+      <span>Welcome, <%= user.email %></span>
+    <% } %>
+  </div>
+</header>

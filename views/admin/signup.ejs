@@ -1,0 +1,23 @@
+<!--Admin reg body -->
+<!--LOG IN Form-->
+<form action="/signup" class="login_register">
+    
+    <h1 class="login_title">Register Admin!</h1>
+    <a href="/dashboard" class="dash-link">Return to Dashboard</a>
+
+    <div class="login_box">
+        <i class='fa-solid fa-user login_icon'></i>
+        <input type="email" name="email" placeholder="Enter email" class="login_input" required>
+    </div>
+    <div class="email error"></div>
+
+    <div class="login_box">
+        <i class='fa-solid fa-lock login_icon'></i>
+        <input type="password" name="password" placeholder="Enter Password" class="login_input" required>
+    </div>
+    <div class="password error"></div>
+
+    <input type="submit" class="login_button" value="Add Admin User">
+</form>
+
+<script src="/scripts/adminsignup.js"></script> 

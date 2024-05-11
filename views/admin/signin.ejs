@@ -1,0 +1,25 @@
+<!--Admin reg body-->
+<!--LOG IN Form-->
+<form action="/signup" class="login_register">
+    <div class="login_img">
+        <img src="/img/sign in icon.png" alt="login image">
+    </div>
+    
+    <h1 class="login_title">Safe Landing!</h1>
+
+    <div class="login_box">
+        <i class='fa-solid fa-user login_icon'></i>
+        <input type="email" name="email" placeholder="Enter Email" class="login_input" required>
+    </div>
+    <div class="email error"></div>
+
+    <div class="login_box">
+        <i class='fa-solid fa-lock login_icon'></i>
+        <input type="password" name="password" placeholder="Enter Password" class="login_input" required>
+    </div>
+    <div class="password error"></div>
+
+    <input type="submit" class="login_button" value="Log In">
+</form>
+
+<script src="/scripts/adminsignin.js"></script>
