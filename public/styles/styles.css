@@ -304,21 +304,22 @@ font-weight: bolder;
     background-color: #2b9348;
     border-radius: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 12px;
+    padding: 10px;
 
 }
 
 .icon{
     display: block;
     margin: auto;
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     color: #FFFFFF;
+
 }
 
 .procedure{
-    margin-left: 20px;
-    flex: 78%;
+    padding-left: 20px;
+    flex: 80%;
 }
 
 .procedure > p{
@@ -760,7 +761,7 @@ font-weight: bolder;
     }
 
     .step-icon{
-      width:12%;
+      width:20%;
     }
 
     .how-to{
