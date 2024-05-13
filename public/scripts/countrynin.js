@@ -26,7 +26,7 @@ function updateInputType() {
           break;
         default:
           nationalIdInput.placeholder = 'Enter Country ID Number';
-          nationalIdInput.pattern = ''; // Clear any specific pattern
+          nationalIdInput.pattern = '\\d[A-Z]'; // Clear any specific pattern
       }
     } else {
       console.log(err);

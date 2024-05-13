@@ -11,11 +11,12 @@ nextBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     if(Form.checkValidity()){
+      document.getElementById('err-mss').innerHTML='';
       formStepsNum++;
       updateFormSteps();
       updateProgressbar();
     }else{
-      document.getElementById('err-mss').innerHTML='Please fill and validate all required field';
+      document.getElementById('err-mss').innerHTML='Please check and validate all required field';
     }
   });
 });
