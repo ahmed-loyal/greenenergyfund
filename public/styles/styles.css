@@ -688,6 +688,13 @@ font-weight: bolder;
   margin: 10px 0;
 }
 
+/* error message */
+.error{
+  text-align: center;
+  margin: 20px auto;
+  color: crimson;
+}
+
 
 /* @ Media Query */
 @media screen and (max-width: 600px) {

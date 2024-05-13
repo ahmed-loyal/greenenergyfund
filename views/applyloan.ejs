@@ -78,42 +78,42 @@
                 <!-- <div class="progress-step" data-title=""></div> -->
             </div>
 
-            <form action="#">
+            <form action="#" id="form-step">
 
                 <div class="form-step form-step-active">
                     <div class="name-input mt-10">
                         <h4 class="name-header">Client Name <span class="required">(Required)</span></h4>
                         <div class="mt-10">
                             <label for="fname"> First Name</label>
-                            <input id="fname" class="mt-10 isvalid" type="text" placeholder="Enter First Name" required>
+                            <input id="fname" class="mt-10" type="text" placeholder="Enter First Name" required>
                         </div>
                         <div class="mt-10">
                             <label for="lastname"> Last Name</label>
-                            <input id="lastname" class="mt-10 isvalid" type="text" placeholder="Enter Last Name" required>
+                            <input id="lastname" class="mt-10" type="text" placeholder="Enter Last Name" required>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="phone">Mobile <span class="required">(Required)</span></label>
-                            <input id="phone" class="mt-10 isvalid" type="tel" placeholder=" Enter Phone Number" required>
+                            <input id="phone" class="mt-10" type="tel" placeholder=" Enter Phone Number" required>
                         </div>
                         <div>
                             <label for="email">Email <span class="required">(Required)</span></label>
-                            <input id="email" class="mt-10 isvalid" type="email" placeholder="Enter Email" required>
+                            <input id="email" class="mt-10" type="email" placeholder="Enter Email" required>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="country">Country <span class="required">(Required)</span></label>
-                            <select id="country" class="mt-10 form-select country isvalid" aria-label="Default select example" onchange="loadStates()" required>
+                            <select id="country" class="mt-10 form-select country" aria-label="Default select example" onchange="loadStates()" required>
                                 <option selected>Select Country</option>
                             </select>
                         </div>
                         <div>
                             <label for="state">State</label>
-                            <select id="state" class="mt-10 form-select state isvalid" aria-label="Default select example" onchange="loadCities()" onfocus="updateInputType()"  required>
+                            <select id="state" class="mt-10 form-select state" aria-label="Default select example" onchange="loadCities()" onfocus="updateInputType()"  required>
                                 <option selected>Select State</option>
                             </select>
                         </div>
@@ -121,30 +121,30 @@
 
                     <div class="home-address mt-10">
                         <label for="homeaddress">Home Address </label>
-                        <input id="homeaddress" class="mt-10 isvalid" type="text" placeholder="Enter your address">
+                        <input id="homeaddress" class="mt-10" type="text" placeholder="Enter your address">
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="city">City</label>
-                            <select id="city" class="mt-10 form-select city isvalid" aria-label="Default select example">
+                            <select id="city" class="mt-10 form-select city" aria-label="Default select example">
                                 <option selected>Select City</option>
                             </select>
                         </div>
                         <div>
                             <label for="zipcode">Zip Code </label>
-                            <input id="zipcode" class="mt-10 isvalid" type="text" placeholder="Enter Zipcode">
+                            <input id="zipcode" class="mt-10" type="text" placeholder="Enter Zipcode">
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="dob">DOB <span class="required">(Required)</span></label>
-                            <input id="dob" class="mt-10 isvalid" type="date" required>
+                            <input id="dob" class="mt-10" type="date" required>
                         </div>
                         <div id="inputContainer">
                             <label for="idnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
-                            <input id="idnumber" class="mt-10 isvalid" type="text" placeholder="Enter Country Identity Number"required>
+                            <input id="idnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
                         </div>
                     </div>
 
@@ -162,7 +162,7 @@
                     <div class="name-input mt-10">
                         <div>
                             <label for="creditscore">Credit Score <span class="required">(Required)</span></label>
-                            <select id="creditscore" class="mt-10 form-select state isvalid" aria-label="Default select example"required>
+                            <select id="creditscore" class="mt-10 form-select state" aria-label="Default select example" required>
                                 <option selected>Select Credit Score</option>
                                 <option>599</option>
                                 <option>600-649</option>
@@ -175,11 +175,12 @@
                         </div>
                         <div>
                             <label for="loanamount">Loan Amount?<span class="required">(Required)</span></label>
-                            <input id="loanownership" class="mt-10 isvalid" type="text" placeholder="Enter Required Amount" required>
+                            <input id="loanownership" class="mt-10" type="text" placeholder="Enter Required Amount" required>
                         </div>
                     </div>
 
                     <div class="">
+                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-next btn-width-50">Next</a>
                     </div>
 
@@ -193,7 +194,7 @@
                         <div class="radio-tile-group">
                     
                             <div class="input-container">
-                                <input type="radio" name="bankacct" class="isvalid">
+                                <input type="radio" name="bankacct">
                                 <div class="radio-tile">
                                     <i class="fa-solid fa-thumbs-up"></i>
                                 </div>
@@ -201,7 +202,7 @@
                             </div>
                     
                             <div class="input-container">
-                                <input type="radio" name="bankacct" class="isvalid">
+                                <input type="radio" name="bankacct">
                                 <div class="radio-tile">
                                     <i class="fa-solid fa-thumbs-down"></i>
                                 </div>
@@ -212,6 +213,7 @@
 
                     <!--btn-->
                     <div class="btns-group">
+                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
@@ -244,6 +246,7 @@
 
                     <!--btn-->
                     <div class="btns-group">
+                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
@@ -275,6 +278,7 @@
 
                     <!--btn-->
                     <div class="btns-group">
+                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
@@ -330,6 +334,7 @@
 
                     <!--btn-->
                     <div class="btns-group">
+                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
@@ -370,6 +375,7 @@
 
                     <!--btn-->
                     <div class="btns-group">
+                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
