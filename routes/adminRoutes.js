@@ -10,6 +10,8 @@ router.get('/admin', adminController.admin_get);
 router.post('/signup', adminController.signup_post);
 router.post('/admin', adminController.admin_post);
 router.get('/dashboard', requireAuth, adminController.dashboard_get);
+router.get('/personalloandata', requireAuth, adminController.personalloandata_get);
+router.get('/businessloandata', requireAuth, adminController.businessloandata_get);
 router.get('/logout', adminController.logout_get);
 
 

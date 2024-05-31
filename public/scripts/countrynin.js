@@ -1,5 +1,5 @@
 function updateInputType() {
-    var countrySelect = document.getElementById('country');
+    var countrySelect = document.querySelector('input[name="country"]:checked');
     var nationalIdInput = document.getElementById('idnumber');
 
 
@@ -26,7 +26,7 @@ function updateInputType() {
           break;
         default:
           nationalIdInput.placeholder = 'Enter Country ID Number';
-          nationalIdInput.pattern = '\\d[A-Z]'; // Clear any specific pattern
+          nationalIdInput.pattern = ''; // Clear any specific pattern
       }
     } else {
       console.log(err);

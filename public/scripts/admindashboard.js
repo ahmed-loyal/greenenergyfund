@@ -7,6 +7,8 @@ function collapse_nav(head, toggler, sidenav) {
   const nav_toggler = document.getElementById(toggler);
   const nav = document.getElementById(sidenav);
 
+  
+
   nav_toggler.addEventListener("click", function () {
     this.classList.toggle("fa-times");
     nav.classList.toggle("collapse");
@@ -14,7 +16,7 @@ function collapse_nav(head, toggler, sidenav) {
   });
 }
 
-collapse_nav("header", "nav-toggler", "nav");
+collapse_nav("header", "nav-toggler", "nav", "Container");
 
 nav_links.forEach((link) => {
   link.addEventListener("click", function () {

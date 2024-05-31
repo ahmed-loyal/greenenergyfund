@@ -4,9 +4,9 @@ const config = {
 }
 
 
-var countrySelect = document.querySelector('.country'),
-    stateSelect = document.querySelector('.state'),
-    citySelect = document.querySelector('.city');
+var countrySelect = document.querySelector('input[name="country"]:checked');
+var stateSelect = document.querySelector('.state');
+var citySelect = document.querySelector('.city');
 
 var headers = new Headers();
 headers.append("X-CSCAPI-KEY", config.ckey);
@@ -25,13 +25,18 @@ function loadCountries() {
     fetch(apiEndPoint, requestOptions)
     .then(Response => Response.json())
     .then(data => {
-        // console.log(data);
+        console.log(data);
 
         data.forEach(country => {
-            const option = document.createElement('option')
-            option.value = country.iso2
-            option.textContent = country.name 
-            countrySelect.appendChild(option)
+
+            if(countrySelect){
+                countrySelect.value = country.iso2;
+            }
+
+            // const option = document.createElement('option')
+            // option.value = country.iso2
+            // option.textContent = country.name 
+            // countrySelect.appendChild(option)
         })
     })
     .catch(error => console.error('Error loading countries:', error))
@@ -49,12 +54,11 @@ function loadStates() {
     stateSelect.style.pointerEvents = 'auto'
     citySelect.style.pointerEvents = 'none'
 
-    const selectedCountryCode = countrySelect.value
     // console.log(selectedCountryCode);
     stateSelect.innerHTML = '<option value="">Select State</option>' // for clearing the existing states
     citySelect.innerHTML = '<option value="">Select City</option>' // Clear existing city options
 
-    fetch(`${config.cUrl}/${selectedCountryCode}/states`, requestOptions)
+    fetch(`${config.cUrl}/${countrySelect.value}/states`, requestOptions)
     .then(response => response.json())
     .then(data => {
         // console.log(data);
@@ -94,4 +98,4 @@ function loadCities() {
     })
 }
 
-window.onload = loadCountries;
+// window.onload = loadCountries;

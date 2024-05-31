@@ -88,6 +88,16 @@ module.exports.dashboard_get = (req, res) => {
   res.render('admin/dashboard', { title: 'GreenEnergy Dashboard', layout: adminLayout});
 };
 
+module.exports.personalloandata_get = (req, res) => {
+  res.render('admin/personalloandata', { title: 'Personal Loans', layout: adminLayout});
+};
+
+module.exports.businessloandata_get = (req, res) => {
+  res.render('admin/businessloandata', { title: 'Business Loans', layout: adminLayout});
+};
+
+
+
 module.exports.logout_get = (req, res) => {
   res.cookie('jwt', '', { maxAge: 1 });
   res.redirect('/admin');

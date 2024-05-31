@@ -165,6 +165,52 @@ body{
 }
 /*About Sectione end*/
 
+/* business loan style */
+
+.center-form{
+  margin: 15px auto;
+}
+
+.biz-img{
+  max-width: 80%;
+  margin:10px auto;
+}
+
+.biz-loan{
+  padding: 25px 0;
+}
+
+.biz-loan p{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.biz-loan a{
+  padding: 0.75rem;
+  width: 50%;
+  display: block;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  border: 1px solid #2b9348;
+  text-align: center;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.biz-loan a:hover {
+  background-color: #008000;
+  color: #ebf2fa;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+
+
+
+
 
 /*Offer Section*/
 .offer-section{
@@ -345,7 +391,15 @@ font-weight: bolder;
     border-radius: 15px;
     background-color: #FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+}
+
+.form-section h1{
+  font-size: 1.7rem;
+  line-height: 3rem;
+}
+
+.form-h1{
+  font-size: 2rem !important;
 }
 
 .required{
@@ -360,7 +414,7 @@ font-weight: bolder;
 }
 
 .name-input{
-    flex: 100%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -395,7 +449,7 @@ font-weight: bolder;
 }
 
 .home-address{
-    flex: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -426,6 +480,140 @@ font-weight: bolder;
   border-bottom: 1px solid #495057;
   cursor: pointer;
 }
+
+/* Bank statement and id uploads style */
+.upload-text{
+  text-align: justify;
+}
+
+.upload-text h2{
+  font-size: 1.5rem;
+}
+
+.green{
+  color: rgb(3, 144, 66);
+}
+
+.upload-text h4{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.upload-text p{
+  font-size: 0.90rem;
+  font-weight: 400;
+}
+
+.image-area{
+  position: relative;
+  height: 200px;
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #666;
+  border-radius: 7px;
+}
+
+.upload-btn{
+  position: absolute;
+  left: 35%;
+  top: 80px;
+  padding: 0.75rem;
+  width: 30%;
+  display: block;
+  text-decoration: none;
+  background-color: #666;
+  color: #ebf2fa;
+  border: 1px solid #666;
+  text-align: center;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.upload-btn:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #ebf2fa;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+
+/*Country Radio start*/ 
+  .country-radio{
+    width: 100%;
+    height: auto;
+  }
+
+  .country-radio label{
+    font-weight: bold;
+    font-size: 1rem;
+    display: block;
+  }
+  
+  .country-radio-tile-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .country-input-container {
+    position: relative;
+    height: 6rem;
+    width: 6rem;
+    margin: 1rem;
+  }
+  
+  .country-input-container input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+  }
+  
+  .country-input-container .country-radio-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .country-input-container img{
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .country-input-container h4{
+    text-align: center;
+    padding-top: 0.10rem;
+    font-size: 0.80rem;
+    font-weight: 600;
+  }
+  
+  input:checked+.country-radio-tile {
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 12px var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  input:hover+.country-radio-tile {
+    box-shadow: 0 0 12px var(--primary-color);
+    transition: all 300ms ease-in-out;
+  }
+  
+  input:checked+.country-radio-tile+h4 {
+    color: var(--primary-color);
+    padding-top: 0.50rem;
+    transition: padding-top 300ms ease-in-out;
+  }
+/* Country Radio end*/
 
 
 /*Form Radio start*/ 
@@ -797,6 +985,12 @@ font-weight: bolder;
     .consult-btn{
       width: 50%;
       margin: auto;
+    }
+
+    /* upload file style */
+    .upload-btn{
+      width: 50%;
+      left: 25%;
     }
 
   }

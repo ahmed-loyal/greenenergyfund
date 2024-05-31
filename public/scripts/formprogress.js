@@ -10,14 +10,14 @@ let formStepsNum = 0;
 nextBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
-    if(Form.checkValidity()){
+    // if(Form.checkValidity()){
       document.getElementById('err-mss').innerHTML='';
       formStepsNum++;
       updateFormSteps();
       updateProgressbar();
-    }else{
-      document.getElementById('err-mss').innerHTML='Please check and validate all required field';
-    }
+    // }else{
+    //   document.getElementById('err-mss').innerHTML='Please check  and validate all required field';
+    // }
   });
 });
 
