@@ -1,0 +1,485 @@
+<div class=" how-to">
+
+    <div class="form-section">
+        <h1>Enter your Information for Personal Application</h1>
+
+        <!--Progress bar-->
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            
+            <div class="progress-step progress-step-active" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+        </div>
+
+        <form action="#" id="form-step">
+
+            <div class="form-step form-step-active">
+                <div class="name-input mt-10">
+                    <h4 class="name-header">Client Name <span class="required">(Required)</span></h4>
+                    <div class="mt-10">
+                        <label for="fname"> First Name</label>
+                        <input id="fname" class="mt-10" type="text" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="mt-10">
+                        <label for="lastname"> Last Name</label>
+                        <input id="lastname" class="mt-10" type="text" placeholder="Enter Last Name" required>
+                    </div>
+                </div>
+
+                <div class="name-input mt-10">   
+                    <div>
+                        <label for="phone">Mobile <span class="required">(Required)</span></label>
+                        <input id="phone" class="mt-10" type="tel" placeholder=" Enter Phone Number" required>
+                    </div>
+                    <div>
+                        <label for="email">Email <span class="required">(Required)</span></label>
+                        <input id="email" class="mt-10" type="email" placeholder="Enter Email" required>
+                    </div>
+                </div>
+
+                <div class="country-radio mt-10">   
+                    <label for="country">Country <span class="required">(Required)</span></label>
+                    <div class="country-radio-tile-group">
+                
+                        <div class="country-input-container">
+                            <input type="radio" name="country" value="US" onchange="updateInputType()">
+                            <div class="country-radio-tile">
+                                <img src="/img/united-states-162454_640.png"></img>
+                            </div>
+                            <h4>United State</h4>
+                        </div>
+
+                        <div class="country-input-container">
+                            <input type="radio" name="country" value="CA" onchange="updateInputType()">
+                            <div class="country-radio-tile">
+                                <img src="/img/canada-159585_640.png"></img>
+                            </div>
+                            <h4>Canada</h4>
+                        </div>
+
+                        <div class="country-input-container">
+                            <input type="radio" name="country" value="GB"  onchange="updateInputType()">
+                            <div class="country-radio-tile">
+                                <img src="/img/united-kingdom-162452_640.png"></img>
+                            </div>
+                            <h4>United Kingdom</h4>
+                        </div>
+
+                        <div class="country-input-container">
+                            <input type="radio" name="country" value="AU" onchange="updateInputType()">
+                            <div class="country-radio-tile">
+                                <img src="/img/australia-1296727_640.png"></img>
+                            </div>
+                            <h4>Australia</h4>
+                        </div>
+                    </div>
+
+                    <!-- <select id="country" class="mt-10 form-select country" aria-label="Default select example" onchange="loadStates()" required>
+                        <option selected>Select Country</option>
+                    </select> --> 
+                </div>
+
+                <div class="home-address mt-10">
+                    <label for="homeaddress">Home Address </label>
+                    <input id="homeaddress" class="mt-10" type="text" placeholder="Enter your address">
+                </div>
+
+                <div class="name-input mt-10"> 
+                    <div>
+                        <label for="state">State</label>
+                        <input id="state" class="mt-10" type="text" placeholder="Enter State" required>
+                        <!-- <select id="state" class="mt-10 form-select state" aria-label="Default select example" required>
+                            <option selected>Select State</option>
+                        </select> -->
+                    </div>
+
+                    <div>
+                        <label for="city">City</label>
+                        <input id="city" class="mt-10" type="text" placeholder="Enter City" required>
+                        <!-- <select id="city" class="mt-10 form-select city" aria-label="Default select example">
+                            <option selected>Select City</option>
+                        </select> -->
+                    </div>
+                </div>
+
+                <div class="name-input mt-10">   
+                    <div>
+                        <label for="zipcode">Zip Code </label>
+                        <input id="zipcode" class="mt-10" type="text" placeholder="Enter Zipcode">
+                    </div>
+
+                    <div id="inputContainer">
+                        <label for="idnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
+                        <input id="idnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
+                    </div>
+                    
+                </div>
+
+                <div class="name-input mt-10">   
+                    <div>
+                        <label for="dob">DOB <span class="required">(Required)</span></label>
+                        <input id="dob" class="mt-10" type="date" required>
+                    </div>
+
+                    <div>
+                        <label for="loanamount">Loan Amount?<span class="required">(Required)</span></label>
+                        <input id="loanownership" class="mt-10" type="text" placeholder="Enter Required Amount" required>
+                    </div>
+                    
+                </div>
+
+                <div class="name-input mt-10">
+                    <div>
+                        <label for="agent">Agent Name</label>
+                        <input id="agent" class="mt-10" type="text" placeholder="Enter Agent Name">
+                    </div>
+                    <div>
+                        <label for="agentid">Agent ID</label>
+                        <input class="mt-10" type="text" placeholder="Enter Agent ID">
+                    </div>
+                </div>
+
+                <div class="name-input mt-10">
+                    <div>
+                        <label for="creditscore">Credit Score <span class="required">(Required)</span></label>
+                        <select id="creditscore" class="mt-10 form-select state" aria-label="Default select example" required>
+                            <option selected>Select Credit Score</option>
+                            <option>599</option>
+                            <option>600-649</option>
+                            <option>650-679</option>
+                            <option>680-699</option>
+                            <option>700-719</option>
+                            <option>720-739</option>
+                            <option>740</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="commethod">Choose a Preffered Communication Method</label>
+                        <select id="commethod" class="mt-10 form-select" aria-label="Default select example" required>
+                            <option selected>Select from options</option>
+                            <option> Email</option>
+                            <option>Phone</option>
+                            <option>Whatsapp</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- btn -->
+                <div class="">
+                    <p id="err-mss" class="error"></p>
+                    <a href="#" class="btn btn-next btn-width-50">Next</a>
+                </div>
+
+            </div>
+
+
+            <!--Questions-->
+
+            <div class="form-step mt-20">
+                <div class="name-input mt-20">   
+                    <div>
+                        <label for="bankaccount">Do you have a bank account?</label>
+                        <select id="bankaccount" class="mt-10 form-select" aria-label="Default select example" required>
+                            <option selected> Sectect YES/NO</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="creditcard">Do you have a credit card?</label>
+                        <select id="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
+                            <option selected> Sectect YES/NO</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="name-input mt-20">   
+                    <div>
+                        <label for="bankaccount">Whose name is your bank account in?</label>
+                        <select id="bankaccount" class="mt-10 form-select" aria-label="Default select example" required>
+                            <option selected>Select from options</option>
+                            <option>In your Personal Name</option>
+                            <option>In your Business Name</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="creditcard">What type of funding are you seeking?</label>
+                        <select id="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
+                            <option selected>Select from options</option>
+                            <option>Loan or Advance</option>
+                            <option>Line of Credit</option>
+                            <option>Both</option>
+                        </select>
+                    </div>
+
+                    <!--btn-->
+                    <div class="btns-group">
+                        <p id="err-mss" class="error"></p>
+                        <a href="#" class="btn btn-prev">Previous</a>
+                        <a href="#" class="btn btn-next">Next</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- <div class="form-step">
+                <div class="container">
+                    <h2>Do you have a bank account?</h2>
+                    <div class="radio-tile-group">
+                
+                        <div class="input-container">
+                            <input type="radio" name="bankacct">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </div>
+                            <h4 class="text-option">Yes</h4>
+                        </div>
+                
+                        <div class="input-container">
+                            <input type="radio" name="bankacct">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                            </div>
+                            <h4 class="text-option">No</h4>
+                        </div>
+                    </div>
+                </div> 
+            </div> -->
+
+
+            <!--Do you have a credit card-->
+            <!--<div class="form-step">
+                <div class="container">
+                    <h2>Do you have a credit card?</h2>
+                    <div class="radio-tile-group">
+                
+                        <div class="input-container">
+                            <input type="radio" name="cc">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </div>
+                            <h4>Yes</h4>
+                        </div>
+                
+                        <div class="input-container">
+                            <input type="radio" name="cc">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-thumbs-down"></i>
+                            </div>
+                            <h4>No</h4>
+                        </div>
+                    </div>
+                </div>
+
+                btn
+                <div class="btns-group">
+                    <p id="err-mss" class="error"></p>
+                    <a href="#" class="btn btn-prev">Previous</a>
+                    <a href="#" class="btn btn-next">Next</a>
+                </div>
+            </div>-->
+
+            <!--Whose name is your bank account in-->
+            <!-- <div class="form-step">
+                <div class="container">
+                    <h2>Whose name is your bank account in?</h2>
+                    <div class="radio-tile-group">
+                
+                        <div class="input-container">
+                            <input type="radio" name="bankname">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-piggy-bank"></i>
+                            </div>
+                            <h4>In Your Personal Name</h4>
+                        </div>
+                
+                        <div class="input-container">
+                            <input type="radio" name="bankname">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-file"></i>
+                            </div>
+                            <h4>In Your Business Name</h4>
+                        </div>
+                    </div>
+                </div>
+
+                btn
+                <div class="btns-group">
+                    <p id="err-mss" class="error"></p>
+                    <a href="#" class="btn btn-prev">Previous</a>
+                    <a href="#" class="btn btn-next">Next</a>
+                </div>
+            </div> -->
+
+            <!--In the last 90days, what was your lowest monthly revenue-->
+            <div class="form-step">
+                <div class="container">
+                    <h2>In the last 90days, what was your lowest monthly revenue?</h2>
+                    <div class="radio-tile-group">
+                
+                        <div class="input-container">
+                            <input type="radio" name="monthlyrevenue">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                            </div>
+                            <h4>Less than $3, 000</h4>
+                        </div>
+                
+                        <div class="input-container">
+                            <input type="radio" name="monthlyrevenue">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                            </div>
+                            <h4>$3, 000 - $10, 000</h4>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="radio" name="monthlyrevenue">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                            </div>
+                            <h4>$10, 000 - $15, 000</h4>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="radio" name="monthlyrevenue">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                            </div>
+                            <h4>$15, 000 - $50, 000</h4>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="radio" name="monthlyrevenue">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                            </div>
+                            <h4>$50, 000+</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!--btn-->
+                <div class="btns-group">
+                    <p id="err-mss" class="error"></p>
+                    <a href="#" class="btn btn-prev">Previous</a>
+                    <a href="#" class="btn btn-next">Next</a>
+                </div>
+            </div>
+
+            <!--What type of funding are you seeking-->
+            <!-- <div class="form-step">
+                <div class="container">
+                    <h2>What type of funding are you seeking?</h2>
+                    <div class="radio-tile-group">
+                
+                        <div class="input-container">
+                            <input type="radio" name="fundtype">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <h4>Loan or Advance</h4>
+                        </div>
+                
+                        <div class="input-container">
+                            <input type="radio" name="fundtype">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+                            <h4>Line Of Credit</h4>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="radio" name="fundtype">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-border-all"></i>
+                            </div>
+                            <h4>Both</h4>
+                        </div>
+                    </div>
+                </div>
+                
+
+                btn
+                <div class="btns-group">
+                    <p id="err-mss" class="error"></p>
+                    <a href="#" class="btn btn-prev">Previous</a>
+                    <a href="#" class="btn btn-next">Next</a>
+                </div>
+            </div> -->
+
+            <!--How do you want us to contact you-->
+            <!-- <div class="form-step">
+                <div class="container">
+                    <h2>Choose a preferred communication method</h2>
+                    <div class="radio-tile-group">
+                
+                        <div class="input-container">
+                            <input type="radio" name="contactchoice">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-inbox"></i>
+                            </div>
+                            <h4>Email</h4>
+                        </div>
+                
+                        <div class="input-container">
+                            <input type="radio" name="contactchoice">
+                            <div class="radio-tile">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <h4>Phone</h4>
+                        </div>
+
+                        <div class="input-container">
+                            <input type="radio" name="contactchoice">
+                            <div class="radio-tile">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <h4>Whatsapp</h4>
+                        </div>
+                    </div>
+                </div>
+
+                Submit
+                <div class="btns-group">
+                    <a href="#" class="btn btn-prev">Previous</a>
+                    <input type="submit" value="Submit" class="btn" />
+                </div>
+            </div> -->
+
+            <div class="form-step">
+                <div class=" upload-text">
+                    <h2 class="mt-10 green">Upload Documents</h2>
+                    <h2 class="mt-10">For Faster Approval Upload 3 Months Bank Statements and your Valid ID card(Front and Back)</h2>
+                    <h4 class="mt-10">Estimated Approval 3 - 4 Hours</h4>
+                    <p class="mt-10">For application whose business is located in the state of California or New York, please upload the four most recent months of business bank statements.</p>
+                </div>
+
+                <!-- Image uploader -->
+                <div class="image-area">
+                    <input id="file" type="file" placeholder="Select Files" multiple accept="image/*,application/pdf,.pdf" hidden>
+                    <button class="upload-btn">Select Files</button>
+                </div>
+
+                <!--Submit-->
+                <div class="btns-group">
+                    <a href="#" class="btn btn-prev">Previous</a>
+                    <input type="submit" value="Submit" class="btn" />
+                </div>
+            </div>
+
+
+        </form>
+
+        <p class="form-text">
+            This site is managed exclusively by Greenenergy Fund. 
+            Agents act solely as a referring partners and do not guarantee or underwrite Bank Breezy services. 
+            By entering your mobile number you consent that we may contact you on your mobile to help facilitate your application.
+        </p>
+    </div>     
+
+</div>

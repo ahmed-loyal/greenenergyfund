@@ -13,11 +13,6 @@
                 <div class="progress-step" data-title=""></div>
                 <div class="progress-step" data-title=""></div>
                 <div class="progress-step" data-title=""></div>
-                <div class="progress-step" data-title=""></div>
-                <div class="progress-step" data-title=""></div>
-                <div class="progress-step" data-title=""></div>
-                <div class="progress-step" data-title=""></div>
-                <div class="progress-step" data-title=""></div>
             </div>
 
             <form action="#" id="form-step">
@@ -138,6 +133,7 @@
                     <div class="home-address mt-10">
                         <label for="useoffund">Use of Funds* <span class="required">(select all that apply)</span></label>
                         <select id="useoffund" class="mt-10 form-select" aria-label="Default select example"required>
+                            <option selected>Select from Options</option>
                             <option>Purchase Equipment</option>
                             <option>Hire Additional Employee</option>
                             <option>Expand or Renovate</option>
@@ -154,6 +150,7 @@
                     <div class="home-address mt-10">
                         <label for="businessownership">Business Ownership*</label>
                         <select id="businessownership" class="mt-10 form-select" aria-label="Default select example"required>
+                            <option selected>Select from Options</option>
                             <option>100</option>
                             <option>90</option>
                             <option>80</option>
@@ -264,13 +261,13 @@
 
                     <div class="name-input mt-10">   
                         <div>
-                            <label for="zipcode">Home Address </label>
-                            <input id="zipcode" class="mt-10" type="text" placeholder="Enter your address">
-                        </div>
-
-                        <div>
                             <label for="zipcode">Zip Code </label>
                             <input id="zipcode" class="mt-10" type="text" placeholder="Enter Zipcode">
+                        </div>
+
+                        <div id="inputContainer">
+                            <label for="idnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
+                            <input id="idnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
                         </div>
                     </div>
 
@@ -279,9 +276,16 @@
                             <label for="dob">DOB <span class="required">(Required)</span></label>
                             <input id="dob" class="mt-10" type="date" required>
                         </div>
-                        <div id="inputContainer">
-                            <label for="idnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
-                            <input id="idnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
+                        
+                        <div>
+                            <label for="lowestrevenue">Lowest Revenue for last 3Months?</label>
+                            <select id="lowestrevenue" class="mt-10 form-select" aria-label="Default select example" required>
+                                <option selected> Sectect from options</option>
+                                <option>Less than $3, 000</option>
+                                <option>$3, 000 - $10, 000</option>
+                                <option>$10, 000 - $50, 000</option>
+                                <option>$50, 000++</option>
+                            </select>
                         </div>
                     </div>
 
@@ -297,7 +301,7 @@
                         <div>
                             <label for="creditscore">How did you hear about us?</label>
                             <select id="creditscore" class="mt-10 form-select" aria-label="Default select example" required>
-                                <option selected>Select Options</option>
+                                <option selected>Select from Options</option>
                                 <option>Google</option>
                                 <option>Email</option>
                                 <option>Radio</option>
@@ -329,8 +333,13 @@
                             </select>
                         </div>
                         <div>
-                            <label for="loanamount">Loan Amount?<span class="required">(Required)</span></label>
-                            <input id="loanownership" class="mt-10" type="text" placeholder="Enter Required Amount" required>
+                            <label for="commethod">Choose a Preffered Communication Method</label>
+                            <select id="commethod" class="mt-10 form-select" aria-label="Default select example" required>
+                                <option selected>Select from options</option>
+                                <option> Email</option>
+                                <option>Phone</option>
+                                <option>Whatsapp</option>
+                            </select>
                         </div>
                     </div>
 
@@ -343,9 +352,58 @@
 
                 </div> 
 
+                <!--Questions-->
+
+                <div class="form-step mt-20">
+                    <div class="name-input mt-20">   
+                        <div>
+                            <label for="bankaccount">Do you have a bank account?</label>
+                            <select id="bankaccount" class="mt-10 form-select" aria-label="Default select example" required>
+                                <option selected> Sectect YES/NO</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="creditcard">Do you have a credit card?</label>
+                            <select id="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
+                                <option selected> Sectect YES/NO</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="name-input mt-20">   
+                        <div>
+                            <label for="bankaccount">Whose name is your bank account in?</label>
+                            <select id="bankaccount" class="mt-10 form-select" aria-label="Default select example" required>
+                                <option selected>Select from options</option>
+                                <option>In your Personal Name</option>
+                                <option>In your Business Name</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="creditcard">What type of funding are you seeking?</label>
+                            <select id="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
+                                <option selected>Select from options</option>
+                                <option>Loan or Advance</option>
+                                <option>Line of Credit</option>
+                                <option>Both</option>
+                            </select>
+                        </div>
+
+                        <!--btn-->
+                        <div class="btns-group">
+                            <p id="err-mss" class="error"></p>
+                            <a href="#" class="btn btn-prev">Previous</a>
+                            <a href="#" class="btn btn-next">Next</a>
+                        </div>
+                    </div>
+                </div>
 
                 <!--Do you have a have bank account-->
-                <div class="form-step">
+                <!-- <div class="form-step">
                     <div class="container">
                         <h2>Do you have a bank account?</h2>
                         <div class="radio-tile-group">
@@ -368,17 +426,17 @@
                         </div>
                     </div>
 
-                    <!--btn-->
+                    btn
                     <div class="btns-group">
                         <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
-                </div>
+                </div> -->
 
 
                 <!--Do you have a credit card-->
-                <div class="form-step">
+                <!-- <div class="form-step">
                     <div class="container">
                         <h2>Do you have a credit card?</h2>
                         <div class="radio-tile-group">
@@ -401,16 +459,16 @@
                         </div>
                     </div>
 
-                    <!--btn-->
+                    btn
                     <div class="btns-group">
                         <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!--Whose name is your bank account in-->
-                <div class="form-step">
+                <!-- <div class="form-step">
                     <div class="container">
                         <h2>Whose name is your bank account in?</h2>
                         <div class="radio-tile-group">
@@ -433,16 +491,16 @@
                         </div>
                     </div>
 
-                    <!--btn-->
+                    btn
                     <div class="btns-group">
                         <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!--In the last 90days, what was your lowest monthly revenue-->
-                <div class="form-step">
+                <!-- <!-- <div class="form-step">
                     <div class="container">
                         <h2>In the last 90days, what was your lowest monthly revenue?</h2>
                         <div class="radio-tile-group">
@@ -489,16 +547,16 @@
                         </div>
                     </div>
 
-                    <!--btn-->
+                    btn
                     <div class="btns-group">
                         <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!--What type of funding are you seeking-->
-                <div class="form-step">
+                <!-- <div class="form-step">
                     <div class="container">
                         <h2>What type of funding are you seeking?</h2>
                         <div class="radio-tile-group">
@@ -530,16 +588,16 @@
                     </div>
                     
 
-                    <!--btn-->
+                    btn
                     <div class="btns-group">
                         <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
-                </div>
+                </div> -->
 
                 <!--How do you want us to contact you-->
-                <div class="form-step">
+                <!-- <div class="form-step">
                     <div class="container">
                         <h2>How do you want us to contact you?</h2>
                         <div class="radio-tile-group">
@@ -570,13 +628,13 @@
                         </div>
                     </div>
 
-                    <!--btn-->
+                    btn
                     <div class="btns-group">
                         <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="form-step">
                     <div class=" upload-text">

@@ -181,7 +181,7 @@ body{
 }
 
 .biz-loan p{
-  text-align: center;
+  text-align: justify;
   font-size: 1.2rem;
   font-weight: 500;
 }
@@ -205,6 +205,14 @@ body{
   color: #ebf2fa;
   cursor: pointer;
   transition: all 300ms ease-in-out;
+}
+
+.personal-loan{
+  display: block;
+  color: #008000;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 
@@ -322,7 +330,6 @@ font-weight: bolder;
     margin: 20px auto;
     padding: 0 20px;
 }
-
 .how-to{
     width: 50%;
     display: flex;
@@ -624,7 +631,7 @@ font-weight: bolder;
     justify-content: center;
     align-items: center;
     height: auto;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .radio-tile-group {
@@ -985,6 +992,11 @@ font-weight: bolder;
     .consult-btn{
       width: 50%;
       margin: auto;
+    }
+
+    /* business loan for styles */
+    .biz-loan a{
+      width: 80%;
     }
 
     /* upload file style */
