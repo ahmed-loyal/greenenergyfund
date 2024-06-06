@@ -536,6 +536,11 @@ font-weight: bolder;
   transition: all 300ms ease-in-out;
 }
 
+.file-list p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
 
 /*Country Radio start*/ 
   .country-radio{
@@ -817,15 +822,15 @@ input.valid{
   border: 2px solid #36cc36;
 }
 
-select.valid{
-  border: 2px solid #36cc36;
-}
-
-input.valid{
+input.invalid{
   border:2px solid rgb(239, 81, 13);
 }
 
 select.valid{
+  border: 2px solid #36cc36;
+}
+
+select.invalid{
   border:2px solid rgb(239, 81, 13);
 }
 

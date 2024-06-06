@@ -10,6 +10,10 @@ const businessLoanSchema = new Schema({
     type: String,
     required: true,
   },
+  businesscountry: {
+    type: String,
+    required: true,
+  },
   businessaddress: {
     type: String,
     required: true,

@@ -32,7 +32,7 @@
                     <div class="name-input mt-10">   
                         <div>
                             <label for="phonenumber">Mobile <span class="required">(Required)</span></label>
-                            <input id="phonenumber" name="phonenumber" class="mt-10" type="tel" placeholder=" Enter Phone Number" required>
+                            <input id="phonenumber" name="phonenumber" class="mt-10" type="text" placeholder=" Enter Phone Number" required>
                             <p>Please enter a valid phone number</p>
                         </div>
                         <div>
@@ -82,7 +82,7 @@
 
                     <div class="home-address mt-10">
                         <label for="homeaddress">Home Address </label>
-                        <input id="homeaddress" name="homeaddress" class="mt-10" type="text" placeholder="Enter your address">
+                        <input id="homeaddress" name="homeaddress" class="mt-10" type="text" placeholder="Enter your address" required>
                         <p>Please enter your home address</p>
                     </div>
 
@@ -103,13 +103,13 @@
                     <div class="name-input mt-10">   
                         <div>
                             <label for="zipcode">Zip Code </label>
-                            <input id="zipcode" name="zipcode" class="mt-10" type="text" placeholder="Enter Zipcode">
+                            <input id="zipcode" name="zipcode" class="mt-10" type="text" placeholder="Enter Zipcode" required>
                             <p>Please enter your Zipcode</p>
                         </div>
 
                         <div id="inputContainer">
                             <label for="ninnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
-                            <input id="ninnumber" name="ninnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
+                            <input id="ninnumber" name="ninnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number" required>
                             <p>Please enter your National Identity Number</p>
                         </div>
                         
@@ -118,14 +118,14 @@
                     <div class="name-input mt-10">   
                         <div>
                             <label for="dob">DOB <span class="required">(Required)</span></label>
-                            <input id="dob" name="dob" class="mt-10" type="date" required>
-                            <p>Please enter date of birth</p>
+                            <input id="dob" name="dob" class="mt-10" type="text" required>
+                            <p>Please enter date of birth. Format: MM/DD/YYYY eg. 12/01/1999</p>
                         </div>
 
                         <div>
                             <label for="loanamount">Loan Amount?<span class="required">(Required)</span></label>
                             <input id="loanamount" name="loanamount" class="mt-10" type="text" placeholder="Enter Required Amount" required>
-                            <p>Please enter loan amount</p>
+                            <p>Please enter loan amount. Format: 1,000.00 or 1000</p>
                         </div>
                         
                     </div>
@@ -144,8 +144,8 @@
                     <div class="name-input mt-10">
                         <div>
                             <label for="creditscore">Credit Score <span class="required">(Required)</span></label>
-                            <select id="creditscore" name="creditscore" class="mt-10 form-select state" aria-label="Default select example" required>
-                                <option selected>Select Credit Score</option>
+                            <select id="creditscore" name="creditscore" class="mt-10 form-select state" required>
+                                <option value="" disabled selected>Select Credit Score</option>
                                 <option>599</option>
                                 <option>600-649</option>
                                 <option>650-679</option>
@@ -159,8 +159,8 @@
                         
                         <div>
                             <label for="commethod">Choose a Preffered Communication Method</label>
-                            <select id="commethod" name="commethod" class="mt-10 form-select" aria-label="Default select example" required>
-                                <option selected>Select from options</option>
+                            <select id="commethod" name="commethod" class="mt-10 form-select" required>
+                                <option value="" selected>Select from options</option>
                                 <option> Email</option>
                                 <option>Phone</option>
                                 <option>Whatsapp</option>
@@ -183,8 +183,8 @@
                     <div class="name-input mt-20">   
                         <div>
                             <label for="bankaccount">Do you have a bank account?</label>
-                            <select id="bankaccount" name="bankaccount" class="mt-10 form-select" aria-label="Default select example" required>
-                                <option selected> Sectect YES/NO</option>
+                            <select id="bankaccount" name="bankaccount" class="mt-10 form-select" required>
+                                <option value="" disabled selected> Select YES/NO</option>
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
@@ -192,8 +192,8 @@
                         </div>
                         <div>
                             <label for="creditcard">Do you have a credit card?</label>
-                            <select id="creditcard" name="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
-                                <option selected> Sectect YES/NO</option>
+                            <select id="creditcard" name="creditcard" class="mt-10 form-select" required>
+                                <option value="" disabled selected> Sectect YES/NO</option>
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
@@ -204,8 +204,8 @@
                     <div class="name-input mt-20">   
                         <div>
                             <label for="accountname">Whose name is your bank account in?</label>
-                            <select id="accountname" name="accountname" class="mt-10 form-select" aria-label="Default select example" required>
-                                <option selected>Select from options</option>
+                            <select id="accountname" name="accountname" class="mt-10 form-select" required>
+                                <option value="" disabled selected>Select from options</option>
                                 <option>In your Personal Name</option>
                                 <option>In your Business Name</option>
                             </select>
@@ -213,8 +213,8 @@
                         </div>
                         <div>
                             <label for="fundtype">What type of funding are you seeking?</label>
-                            <select id="fundtype" name="fundtype" class="mt-10 form-select" aria-label="Default select example" required>
-                                <option selected>Select from options</option>
+                            <select id="fundtype" name="fundtype" class="mt-10 form-select" required>
+                                <option value="" disabled selected>Select from options</option>
                                 <option>Loan or Advance</option>
                                 <option>Line of Credit</option>
                                 <option>Both</option>
@@ -225,8 +225,8 @@
 
                     <div class="home-address mt-10">
                         <label for="monthlyrevenue">Lowest Revenue for last 3Months?</label>
-                        <select id="monthlyrevenue" name="monthlyrevenue" class="mt-10 form-select" aria-label="Default select example" required>
-                            <option selected> Sectect from options</option>
+                        <select id="monthlyrevenue" name="monthlyrevenue" class="mt-10 form-select" required>
+                            <option value="" disabled selected> Select from options</option>
                             <option>Less than $3, 000</option>
                             <option>$3, 000 - $10, 000</option>
                             <option>$10, 000 - $50, 000</option>
@@ -477,9 +477,10 @@
 
                     <!-- Image uploader -->
                     <div class="image-area">
-                        <input id="file" name="images" type="file" accept="image/*" multiple required hidden>
+                        <input id="images" name="images" type="file" accept="image/*" multiple required hidden>
                         <button class="upload-btn">Select Files</button>
                     </div>
+                    <div class="file-list"></div>
 
                     <!--Submit-->
                     <div class="btns-group">
@@ -503,8 +504,23 @@
 <script>
     const uploadBtn = document.querySelector('.upload-btn');
     const inputFile = document.querySelector('#images');
+    const fileList = document.querySelector('.file-list');
 
     uploadBtn.addEventListener('click', function () {
     inputFile.click();
     });
+
+    inputFile.addEventListener('change', function () {
+        const files = inputFile.files;
+        if (files.length > 0) {
+          for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const p = document.createElement('p');
+            p.textContent = file.name;
+            fileList.appendChild(p);
+          }
+        }
+        // Reset the input value to allow the same file to be uploaded again if needed
+        // inputFile.value = '';
+      });
 </script>
