@@ -38,7 +38,7 @@
 
 
         <tbody class="userInfo">
-            <tr class="data-hidden"><td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td></tr>
+            <!-- <tr class="data-hidden"><td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td></tr> -->
             <tr>
                 <% if (personalloans.length > 0) { %>
                     <% personalloans.forEach(personalloan => { %>
@@ -51,7 +51,7 @@
                         <td><%= personalloan.createdAT %></td>
                         <td><%= personalloan.loanamount %></td>
                         <td>
-                            <button><i class="fa-regular fa-eye"></i></button>
+                            <button><i class="fa-regular fa-eye" id="mmodalBtn"></i></button>
                             <button><i class="fa-regular fa-pen-to-square"></i></button>
                             <button><i class="fa-regular fa-trash-can"></i></button>
                         </td>
@@ -62,21 +62,6 @@
                 <% } %>
             </tr>
 
-            <!-- <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>dreey@greenenergy.com</td>
-                <td>+2349045454545</td>
-                <td>United State</td>
-                <td>03-08-2024</td>
-                <td>$25000</td>
-                <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
-                    <button><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button><i class="fa-regular fa-trash-can"></i></button>
-                </td>
-            </tr>
-
             <tr>
                 <td>1</td>
                 <td>John Doe</td>
@@ -86,26 +71,11 @@
                 <td>03-08-2024</td>
                 <td>$25000</td>
                 <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
+                    <button><i class="fa-regular fa-eye" id="modalBtn"></i></button>
                     <button><i class="fa-regular fa-pen-to-square"></i></button>
                     <button><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
-
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>dreey@greenenergy.com</td>
-                <td>+2349045454545</td>
-                <td>United State</td>
-                <td>03-08-2024</td>
-                <td>$25000</td>
-                <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
-                    <button><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button><i class="fa-regular fa-trash-can"></i></button>
-                </td>
-            </tr> -->
         </tbody>
 
     </table>
@@ -127,3 +97,73 @@
 
 
 <!--Popup Data-->
+<!-- The Modal -->
+<div id="dataModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="close-parent">
+        <span class="close">&times;</span>
+    </div>
+    <p>Some text in the Modal.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ex officia delectus aspernatur expedita inventore ea at natus illo recusandae atque perferendis, exercitationem unde, repellendus obcaecati nemo quasi explicabo nihil.</p>
+    <p>Some text in the Modal..</p>
+    <p>Some text in the Modal..</p>
+    <!-- <% if (personalloans.length > 0) { %>
+        <% personalloans.forEach(personalloan => { %>
+            <p>Registrated Date: <%= personalloan.createdAT %></p>
+            <p>Name: <%= personalloan.firstname %> <%= personalloan.lastname %></p>
+            <p> Email: <%= personalloan.email %></p>
+            <p>Mobile:  <%= personalloan.phonenumber %></p>
+            <p>Country: <%= personalloan.country %></p>
+            <p>Home Address: <%= personalloan.homeaddress %></p>
+            <p>State: <%= personalloan.state %></p>
+            <p>City: <%= personalloan.city %></p>
+            <p>Zip Code: <%= personalloan.zipcode %></p>
+            <p>National Identity Number: <%= personalloan.ninnumber %></p>
+            <p>DOB: <%= personalloan.dob %></p>
+            <p>Loan Amount: <%= personalloan.loanamount %></p>
+            <p>Agent: <%= personalloan.agent %></p>
+            <p>Agent ID: <%= personalloan.agentid %></p>
+            <p>Credit Score: <%= personalloan.creditscore %></p>
+            <p>Communication Method: <%= personalloan.commethod %></p>
+            <p>Bank Account: <%= personalloan.bankaccount %></p>
+            <p>Credit Card: <%= personalloan.creditcard %></p>
+            <p>Account Name: <%= personalloan.accountname %></p>
+            <p>Fund Type: <%= personalloan.fundtype %></p>
+            <p>Monthly Revenue: <%= personalloan.monthlyrevenue %></p>
+            <p> Images: <%= personalloan.images %></p>
+        <% }) %>
+    <% } %> -->
+
+  </div>
+
+</div>
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("dataModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("modalBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>

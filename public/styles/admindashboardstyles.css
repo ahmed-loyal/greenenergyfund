@@ -318,6 +318,13 @@ table td button{
     border: 1px solid #666;
 }
 
+table td button:hover{
+  background-color: #98d2af;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 300ms ease-in-out;
+
+}
+
 .container footer{
     margin-top: 25px;
     font-size: 0.90rem;
@@ -349,6 +356,13 @@ footer .pagination button{
     margin: 0;
 }
 
+footer .pagination button:hover{
+  background-color: #98d2af;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: all 300ms ease-in-out;
+
+}
+
 .pagination button:first-child{
     width: 85px;
     border-top-left-radius: 5px;
@@ -362,7 +376,8 @@ footer .pagination button{
 }
 
 .pagination button.pag-active, .pagination button:hover{
-    background-color: #dce1de;
+  background-color: #98d2af;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -392,6 +407,59 @@ table tr .empty{
   .pagination{
     margin-top: 10px;
   }
+
+  .modal-content {
+    width: 90%;
+  }
 }
 
 /* Popup Data */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  transition: all 300ms ease-in-out;
+  width: 80%;
+}
+
+/* .modal-content p:first-child{
+  margin-top: 50px;
+} */
+/* The Close Button */
+.close-parent{
+  padding-bottom: 50px;
+  padding-right: 20px;
+}
+
+.close {
+  color: #aaaaaa;
+  display: block;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}

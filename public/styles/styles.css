@@ -852,13 +852,13 @@ select + p{
 input.invalid + p{
   opacity: 1;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 select.invalid + p{
   opacity: 1;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 

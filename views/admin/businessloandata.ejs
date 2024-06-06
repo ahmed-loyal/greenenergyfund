@@ -26,8 +26,8 @@
         <thead>
             <tr class="heading">
                 <th>Business Name</th>
-                <th>Email</th>
-                <th>Mobile</th>
+                <!-- <th>Email</th> -->
+                <th>Business Mobile</th>
                 <th>Country</th>
                 <th>Industry Type</th>
                 <th>Applied Date</th>
@@ -38,14 +38,12 @@
 
 
         <tbody class="userInfo">
-            <tr class="data-hidden"><td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td></tr>
             <tr>
-
                 <% if (businessloans.length > 0) { %>
                     <% businessloans.forEach(businessloan => { %>
                       <!-- <a class="single" href="/blogs/<%= blog._id %>"> -->
                         <td><%= businessloan.businessname %></td>
-                        <td><%= businessloan.email %></td>
+                        <!-- <td><%= businessloan.email %></td> -->
                         <td><%= businessloan.phonenumber %></td>
                         <td><%= businessloan.country %></td>
                         <td><%= businessloan.indsutrytype %></td>
@@ -63,50 +61,20 @@
                 <% } %>
             </tr>
 
-            <!-- <tr>
-                <td>1</td>
+            <tr>
+                <td>Green Energy</td>
                 <td>John Doe</td>
-                <td>dreey@greenenergy.com</td>
+                <!-- <td>dreey@greenenergy.com</td> -->
                 <td>+2349045454545</td>
                 <td>United State</td>
                 <td>03-08-2024</td>
                 <td>$25000</td>
                 <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
+                    <button><i class="fa-regular fa-eye" id="modalBtn"></i></button>
                     <button><i class="fa-regular fa-pen-to-square"></i></button>
                     <button><i class="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
-
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>dreey@greenenergy.com</td>
-                <td>+2349045454545</td>
-                <td>United State</td>
-                <td>03-08-2024</td>
-                <td>$25000</td>
-                <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
-                    <button><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button><i class="fa-regular fa-trash-can"></i></button>
-                </td>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>dreey@greenenergy.com</td>
-                <td>+2349045454545</td>
-                <td>United State</td>
-                <td>03-08-2024</td>
-                <td>$25000</td>
-                <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
-                    <button><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button><i class="fa-regular fa-trash-can"></i></button>
-                </td>
-            </tr> -->
         </tbody>
 
     </table>
@@ -125,3 +93,92 @@
         </div>
     </footer>
 </div>
+
+<!--Popup Data-->
+<!-- The Modal -->
+<div id="dataModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="close-parent">
+            <span class="close">&times;</span>
+        </div>
+        <p>Some text in the Modal..</p>
+      <!-- <% if (businessloans.length > 0) { %>
+            <% businessloans.forEach(businessloan => { %>
+              <p>Applied Date: <%= personalloan.createdAT %></p>
+              <p>Business Name: <%= businessloan.businessname %></p>
+              <p>Business Legal Name: <%= businessloan.businesslegalname %></p>
+              <p>Business Address: <%= businessloan.businessaddress %></p>
+              <p>Business City: <%= businessloan.businesscity %></p>
+              <p>Business State: <%= businessloan.businessstate %></p>
+              <p>Business Zip Code: <%= businessloan.businesszipcode %></p>
+              <p>Business Mobile: <%= businessloan.businessphonenumber %></p>
+              <p>Business Website: <%= businessloan.businesswebsite %></p>
+              <p>Business Tax ID: <%= businessloan.taxidnumber %></p>
+              <p>Business Annual Revenue: <%= businessloan.annualrevenue %></p>
+              <p>Entity: <%= businessloan.entity %></p>
+              <p>Industry Type: <%= businessloan.industrytype %></p>
+              <p>Business Start Date: <%= businessloan.businessstartdate %></p>
+              <p>Request Amount: <%= businessloan.requestamount %></p>
+              <p>Use of Fund: <%= businessloan.useoffund %></p>
+              <p>Business Ownership: <%= businessloan.businessownership %></p>
+
+              <h2>Personal Information</h2>
+
+              <p>Name: <%= businessloan.firstname %> <%= businessloan.lastname %></p>
+              <p>Email: <%= businessloan.email %></p>
+              <p>Mobile:  <%= businessloan.phonenumber %></p>
+              <p>Country: <%= businessloan.country %></p>
+              <p>Home Address: <%= businessloan.homeaddress %></p>
+              <p>State: <%= businessloan.state %></p>
+              <p>City: <%= businessloan.city %></p>
+              <p>Zip Code: <%= businessloan.zipcode %></p>
+              <p>National Identity Number: <%= businessloan.ninnumber %></p>
+              <p>DOB: <%= businessloan.dob %></p>
+              <p>Loan Amount: <%= businessloan.loanamount %></p>
+              <p>Lowest Revenue: <%= businessloan.lowestrevenue %></p>
+              <p>Informed Method: <%= businessloan.informedmethod %></p>
+              <p>Credit Score: <%= businessloan.creditscore %></p>
+              <p>Communication Method: <%= businessloan.commethod %></p>
+              <p>Bank Account: <%= businessloan.bankaccount %></p>
+              <p>Credit Card: <%= businessloan.creditcard %></p>
+              <p>Account Name: <%= businessloan.accountname %></p>
+              <p>Fund Type: <%= businessloan.fundtype %></p>
+              <p>Monthly Revenue: <%= businessloan.monthlyrevenue %></p>
+              <p> Images: <%= businessloan.images %></p>
+          <% }) %>
+      <% } %> -->
+  
+    </div>
+  
+  </div>
+  
+  
+  <script>
+      // Get the modal
+      var modal = document.getElementById("dataModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("modalBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+  </script>
