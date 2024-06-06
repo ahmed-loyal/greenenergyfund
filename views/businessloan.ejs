@@ -15,67 +15,77 @@
                 <div class="progress-step" data-title=""></div>
             </div>
 
-            <form action="#" id="form-step">
+            <form action="/businessloan" method="POST" id="form-step" enctype="multipart/form-data">
 
 
                 <div class="form-step form-step-active">
                     <div class="name-input mt-20">   
                         <div>
                             <label for="businessname">DBA (Business Name)*</label>
-                            <input id="businessname" class="mt-10" type="text" placeholder=" Enter Business Name" required>
+                            <input id="businessname" name="businessname" class="mt-10" type="text" placeholder=" Enter Business Name" required>
+                            <p>Please enter your business name</p>
                         </div>
                         <div>
                             <label for="businesslegalname">Legal Business Name</label>
-                            <input id="businesslegalname" class="mt-10" type="text" placeholder=" Enter Legal Business Name" required>
+                            <input id="businesslegalname" name="businesslegalname" class="mt-10" type="text" placeholder=" Enter Legal Business Name" required>
+                            <p>Please enter your business legal name</p>
                         </div>
                     </div>
 
                     <div class="home-address mt-10">
                         <label for="businessaddress">Business Address </label>
-                        <input id="businessaddress" class="mt-10" type="text" placeholder=" Enter business location address">
+                        <input id="businessaddress" name="businessaddress" class="mt-10" type="text" placeholder=" Enter business location address">
+                        <p>Please enter your business address</p>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
-                            <label for="businessloccity">What City is your Business in?</label>
-                            <input id="businessloccity" class="mt-10" type="text" placeholder=" Enter location city" required>
+                            <label for="city">What City is your Business in?</label>
+                            <input id="city" name="businesscity" class="mt-10" type="text" placeholder=" Enter location city" required>
+                            <p>Please enter your business location city</p>
                         </div>
                         <div>
-                            <label for="businesslocstate">What State is your Business in?</label>
-                            <input id="businesslocstate" class="mt-10" type="text" placeholder=" Enter location state" required>
+                            <label for="state">What State is your Business in?</label>
+                            <input id="state" name="businessstate" class="mt-10" type="text" placeholder=" Enter location state" required>
+                            <p>Please enter your business location state</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="zipcode">Zip Code</label>
-                            <input id="zipcode" class="mt-10" type="text" placeholder=" Enter zip code" required>
+                            <input id="zipcode" name="businesszipcode" class="mt-10" type="text" placeholder=" Enter zip code" required>
+                            <p>Please enter your business zip code</p>
                         </div>
                         <div>
-                            <label for="businessphone">Business Phone</label>
-                            <input id="businessphone" class="mt-10" type="tel" placeholder=" Enter business phone number" required>
-                        </div>
-                    </div>
-
-                    <div class="name-input mt-10">   
-                        <div>
-                            <label for="website">Website</label>
-                            <input id="website" class="mt-10" type="text" placeholder=" www.url.com" required>
-                        </div>
-                        <div>
-                            <label for="taxid">Tax ID</label>
-                            <input id="taxid" class="mt-10" type="text" placeholder=" Enter Tax ID" required>
+                            <label for="phonenumber">Business Phone</label>
+                            <input id="phonenumber" name="businessphonenumber" class="mt-10" type="tel" placeholder=" Enter business phone number" required>
+                            <p>Please enter a valid phone number</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
-                            <label for="website">Annual Revenue*</label>
-                            <input id="website" class="mt-10" type="text" placeholder=" Enter annaul revenue" required>
+                            <label for="businesswebsite">Website</label>
+                            <input id="businesswebsite" name="businesswebsite" class="mt-10" type="text" placeholder=" www.url.com" required>
+                            <p>Please enter your business website. Format : www.url.com or https://www.example.com</p>
+                        </div>
+                        <div>
+                            <label for="taxidnumber">Tax ID</label>
+                            <input id="taxidnumber" name="taxidnumber" class="mt-10" type="text" placeholder=" Enter Tax ID" required>
+                            <p>Please enter your Tax ID</p>
+                        </div>
+                    </div>
+
+                    <div class="name-input mt-10">   
+                        <div>
+                            <label for="annualrevenue">Annual Revenue*</label>
+                            <input id="annualrevenue" name="annualrevenue" class="mt-10" type="text" placeholder=" Enter annaul revenue" required>
+                            <p>Please enter annual revenue</p>
                         </div>
                         <div>
                             <label for="entity">Entity*</label>
-                            <select id="entity" class="mt-10 form-select" aria-label="Default select example" required>
+                            <select id="entity" name="entity" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select Entity</option>
                                 <option>S Corporation (S Corp)</option>
                                 <option>Professional Limited Liability Company (PLLC)</option>
@@ -87,13 +97,14 @@
                                 <option>Limited Liability Partnership (LLP)</option>
                                 <option>Sole Proprietorship</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="industrytype">Industry Type*</label>
-                            <select id="industrytype" class="mt-10 form-select" aria-label="Default select example" required>
+                            <select id="industrytype" name="industrytype" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select Industry Type</option>
                                 <option>Automotive</option>
                                 <option>Food & Hospitality/Restaurant</option>
@@ -110,29 +121,31 @@
                                 <option>Transportation</option>
                                 <option>Other</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                         <div>
-                            <label for="startdate">Business Start Date*</label>
-                            <input id="startdate" class="mt-10" type="date" required>
+                            <label for="businessstartdate">Business Start Date*</label>
+                            <input id="businessstartdate" name="businessstartdate" class="mt-10" type="date" required>
+                            <p>Please enter business start date</p>
                         </div>
                     </div>
 
                     <!--btn-->
                     <div class="">
-                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-next btn-width-50">Next</a>
                     </div>
                 </div>
 
                 <div class="form-step">
                     <div class="home-address mt-10">
-                        <label for="reqamount">Requested Amount*</label>
-                        <input id="reqamount" class="mt-10" type="text" placeholder=" Enter requested amount" required>
+                        <label for="requestamount">Request Amount*</label>
+                        <input id="requestamount" name="requestamount" class="mt-10" type="text" placeholder=" Enter requested amount" required>
+                        <p>Please enter request amount</p>
                     </div>
 
                     <div class="home-address mt-10">
                         <label for="useoffund">Use of Funds* <span class="required">(select all that apply)</span></label>
-                        <select id="useoffund" class="mt-10 form-select" aria-label="Default select example"required>
+                        <select id="useoffund" name="useoffund" class="mt-10 form-select" aria-label="Default select example"required>
                             <option selected>Select from Options</option>
                             <option>Purchase Equipment</option>
                             <option>Hire Additional Employee</option>
@@ -145,11 +158,12 @@
                             <option>Consolidate Your Debt</option>
                             <option>Other</option>
                         </select>
+                        <p>Please make a selection</p>
                     </div>
 
                     <div class="home-address mt-10">
                         <label for="businessownership">Business Ownership*</label>
-                        <select id="businessownership" class="mt-10 form-select" aria-label="Default select example"required>
+                        <select id="businessownership" name="businessownership" class="mt-10 form-select" aria-label="Default select example"required>
                             <option selected>Select from Options</option>
                             <option>100</option>
                             <option>90</option>
@@ -160,11 +174,11 @@
                             <option>30</option>
                             <option>10</option>
                         </select>
+                        <p>Please make a selection</p>
                     </div>
 
                     <!--btn-->
                     <div class="btns-group">
-                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
@@ -174,23 +188,27 @@
                     <div class="name-input mt-10">
                         <h4 class="name-header">Personal Information <span class="required">(Required)</span></h4>
                         <div class="mt-10">
-                            <label for="fname"> First Name</label>
-                            <input id="fname" class="mt-10" type="text" placeholder="Enter First Name" required>
+                            <label for="firstname"> First Name</label>
+                            <input id="firstname" name="firstname" class="mt-10" type="text" placeholder="Enter First Name" required>
+                            <p>Please enter firsrname</p>
                         </div>
                         <div class="mt-10">
                             <label for="lastname"> Last Name</label>
-                            <input id="lastname" class="mt-10" type="text" placeholder="Enter Last Name" required>
+                            <input id="lastname" name="lastname" class="mt-10" type="text" placeholder="Enter Last Name" required>
+                            <p>Please enter date of birth</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="phone">Mobile <span class="required">(Required)</span></label>
-                            <input id="phone" class="mt-10" type="tel" placeholder=" Enter Phone Number" required>
+                            <input id="phone" name="phonenumber" class="mt-10" type="tel" placeholder=" Enter Phone Number" required>
+                            <p>Please enter a valid phone number</p>
                         </div>
                         <div>
                             <label for="email">Email <span class="required">(Required)</span></label>
-                            <input id="email" class="mt-10" type="email" placeholder="Enter Email" required>
+                            <input id="email" name="email" class="mt-10" type="email" placeholder="Enter Email" required>
+                            <p>Please enter a valid email</p>
                         </div>
                     </div>
 
@@ -199,7 +217,7 @@
                         <div class="country-radio-tile-group">
                     
                             <div class="country-input-container">
-                                <input type="radio" name="country" value="US" onchange="updateInputType()">
+                                <input type="radio" name="country" value="US" required>
                                 <div class="country-radio-tile">
                                     <img src="/img/united-states-162454_640.png"></img>
                                 </div>
@@ -207,7 +225,7 @@
                             </div>
 
                             <div class="country-input-container">
-                                <input type="radio" name="country" value="CA" onchange="updateInputType()">
+                                <input type="radio" name="country" value="CA" required>
                                 <div class="country-radio-tile">
                                     <img src="/img/canada-159585_640.png"></img>
                                 </div>
@@ -215,7 +233,7 @@
                             </div>
 
                             <div class="country-input-container">
-                                <input type="radio" name="country" value="GB"  onchange="updateInputType()">
+                                <input type="radio" name="country" value="GB"  required>
                                 <div class="country-radio-tile">
                                     <img src="/img/united-kingdom-162452_640.png"></img>
                                 </div>
@@ -223,7 +241,7 @@
                             </div>
 
                             <div class="country-input-container">
-                                <input type="radio" name="country" value="AU" onchange="updateInputType()">
+                                <input type="radio" name="country" value="AU" required>
                                 <div class="country-radio-tile">
                                     <img src="/img/australia-1296727_640.png"></img>
                                 </div>
@@ -238,36 +256,35 @@
 
                     <div class="home-address mt-10">
                         <label for="homeaddress">Home Address </label>
-                        <input id="homeaddress" class="mt-10" type="text" placeholder="Enter your address">
+                        <input id="homeaddress" name="homeaddress" class="mt-10" type="text" placeholder="Enter your address">
+                        <p>Please enter your home address</p>
                     </div>
 
                     <div class="name-input mt-10"> 
                         <div>
                             <label for="state">State</label>
-                            <input id="state" class="mt-10" type="text" placeholder="Enter State" required>
-                            <!-- <select id="state" class="mt-10 form-select state" aria-label="Default select example" required>
-                                <option selected>Select State</option>
-                            </select> -->
+                            <input id="state" name="state" class="mt-10" type="text" placeholder="Enter State" required>
+                            <p>Please enter your state</p>
                         </div>
 
                         <div>
                             <label for="city">City</label>
-                            <input id="city" class="mt-10" type="text" placeholder="Enter City" required>
-                            <!-- <select id="city" class="mt-10 form-select city" aria-label="Default select example">
-                                <option selected>Select City</option>
-                            </select> -->
+                            <input id="city" name="city" class="mt-10" type="text" placeholder="Enter City" required>
+                            <p>Please enter your city</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="zipcode">Zip Code </label>
-                            <input id="zipcode" class="mt-10" type="text" placeholder="Enter Zipcode">
+                            <input id="zipcode" name="zipcode class="mt-10" type="text" placeholder="Enter Zipcode">
+                            <p>Please enter your zip code</p>
                         </div>
 
                         <div id="inputContainer">
-                            <label for="idnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
-                            <input id="idnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
+                            <label for="ninnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
+                            <input id="ninnumber" name="ninnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number"required>
+                            <p>Please enter National Identity Number</p>
                         </div>
                     </div>
 
@@ -275,32 +292,35 @@
                         <div>
                             <label for="dob">DOB <span class="required">(Required)</span></label>
                             <input id="dob" class="mt-10" type="date" required>
+                            <p>Please enter dae of birth</p>
                         </div>
                         
                         <div>
                             <label for="lowestrevenue">Lowest Revenue for last 3Months?</label>
-                            <select id="lowestrevenue" class="mt-10 form-select" aria-label="Default select example" required>
+                            <select id="lowestrevenue" name="lowestrevenue" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected> Sectect from options</option>
                                 <option>Less than $3, 000</option>
                                 <option>$3, 000 - $10, 000</option>
                                 <option>$10, 000 - $50, 000</option>
                                 <option>$50, 000++</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">
                         <div>
-                            <label for="creditscore">Existing Loan</label>
-                            <select id="creditscore" class="mt-10 form-select" aria-label="Default select example" required>
+                            <label for="exixtingloan">Existing Loan</label>
+                            <select id="exixtingloan" name="exixtingloan" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected> Sectect YES/NO</option>
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                         <div>
-                            <label for="creditscore">How did you hear about us?</label>
-                            <select id="creditscore" class="mt-10 form-select" aria-label="Default select example" required>
+                            <label for="informedmethod">How did you hear about us?</label>
+                            <select id="informedmethod" name="informedmethod" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select from Options</option>
                                 <option>Google</option>
                                 <option>Email</option>
@@ -315,13 +335,14 @@
                                 <option>Tv / Streaming</option>
                                 <option>Other</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">
                         <div>
                             <label for="creditscore">Credit Score <span class="required">(Required)</span></label>
-                            <select id="creditscore" class="mt-10 form-select" aria-label="Default select example" required>
+                            <select id="creditscore" name="creditscore" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select Credit Score</option>
                                 <option>599</option>
                                 <option>600-649</option>
@@ -331,21 +352,22 @@
                                 <option>720-739</option>
                                 <option>740</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                         <div>
                             <label for="commethod">Choose a Preffered Communication Method</label>
-                            <select id="commethod" class="mt-10 form-select" aria-label="Default select example" required>
+                            <select id="commethod" name="commethod" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select from options</option>
                                 <option> Email</option>
                                 <option>Phone</option>
                                 <option>Whatsapp</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                     </div>
 
                     <!--btn-->
                     <div class="btns-group">
-                        <p id="err-mss" class="error"></p>
                         <a href="#" class="btn btn-prev">Previous</a>
                         <a href="#" class="btn btn-next">Next</a>
                     </div>
@@ -363,39 +385,42 @@
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                         <div>
                             <label for="creditcard">Do you have a credit card?</label>
-                            <select id="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
+                            <select id="creditcard" name="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected> Sectect YES/NO</option>
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-20">   
                         <div>
-                            <label for="bankaccount">Whose name is your bank account in?</label>
-                            <select id="bankaccount" class="mt-10 form-select" aria-label="Default select example" required>
+                            <label for="accountname">Whose name is your bank account in?</label>
+                            <select id="accountname" name="accountname" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select from options</option>
                                 <option>In your Personal Name</option>
                                 <option>In your Business Name</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
                         <div>
-                            <label for="creditcard">What type of funding are you seeking?</label>
-                            <select id="creditcard" class="mt-10 form-select" aria-label="Default select example" required>
+                            <label for="fundtype">What type of funding are you seeking?</label>
+                            <select id="fundtype" name="fundtype" class="mt-10 form-select" aria-label="Default select example" required>
                                 <option selected>Select from options</option>
                                 <option>Loan or Advance</option>
                                 <option>Line of Credit</option>
                                 <option>Both</option>
                             </select>
+                            <p>Please make a selection</p>
                         </div>
 
                         <!--btn-->
                         <div class="btns-group">
-                            <p id="err-mss" class="error"></p>
                             <a href="#" class="btn btn-prev">Previous</a>
                             <a href="#" class="btn btn-next">Next</a>
                         </div>
@@ -500,7 +525,7 @@
                 </div> -->
 
                 <!--In the last 90days, what was your lowest monthly revenue-->
-                <!-- <!-- <div class="form-step">
+                <!-- <div class="form-step">
                     <div class="container">
                         <h2>In the last 90days, what was your lowest monthly revenue?</h2>
                         <div class="radio-tile-group">
@@ -646,14 +671,14 @@
 
                     <!-- Image uploader -->
                     <div class="image-area">
-                        <input id="file" type="file" placeholder="Select Files" multiple accept="image/*,application/pdf,.pdf" hidden>
+                        <input id="images" type="file" name="images" accept="image/*" multiple required hidden>
                         <button class="upload-btn">Select Files</button>
                     </div>
 
                     <!--Submit-->
                     <div class="btns-group">
                         <a href="#" class="btn btn-prev">Previous</a>
-                        <input type="submit" value="Submit" class="btn" />
+                        <button type="submit" class="btn"> Submit</button>
                     </div>
                 </div>
 
@@ -670,9 +695,9 @@
 
     <script>
         const uploadBtn = document.querySelector('.upload-btn');
-        const inputFile = document.querySelector('#file');
+        const inputFile = document.querySelector('#images');
 
         uploadBtn.addEventListener('click', function () {
         inputFile.click();
-        })
+        });
     </script>

@@ -7,12 +7,8 @@
     <title> <%= title %> </title>
     <!-- CSS File -->
     <link rel="stylesheet" href="/styles/styles.css">
-    <!--Phone nnumber styles-->
-    <link rel="stylesheet" href="/build/css/intlTelInput.css">
     <!--Form progress script-->
     <script src="/scripts/formprogress.js" defer></script>
-    <!--Country, State and City API-->
-    <script src="/scripts/countryloader.js" defer></script>
     <!--Font awesome icons-->
     <script src="https://kit.fontawesome.com/03ef1958af.js" crossorigin="anonymous"></script>
 </head>
@@ -27,15 +23,6 @@
 
     <!--Footer section-->
     <%- include("../partials/footer.ejs") %>
-    
-    <!--Country and National Id Number Script-->
-    <script src="/scripts/countrynin.js" defer></script>
-    <!--Phone number script-->
-    <script src="/build/js/intlTelInput.js"></script>
-    <script>
-        var input = document.querySelector("#phone");
-        window.intlTelInput(input,{});
-    </script>
 </body>
     
 </html>

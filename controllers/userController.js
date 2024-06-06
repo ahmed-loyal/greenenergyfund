@@ -1,3 +1,6 @@
+const PersonalLoan = require('../models/Personalloan');
+const BusinessLoan = require('../models/Businessloan');
+
 
 // controller actions
 module.exports.index_get = (req, res) => {
@@ -12,14 +15,45 @@ module.exports.applyloan_get = (req, res) => {
     res.render('applyloan', { title: 'Apply Loan'});
   }
 
+module.exports.personalloan_get = (req, res) => {
+  res.render('personalloan', { title: 'Personal Loan'});
+}
+
 module.exports.businessloan_get = (req, res) => {
   res.render('businessloan', { title: 'Business Loan'});
 }
 
-module.exports.applyloan_post = (req, res) => {
-    res.send('applyloan');
-  }
+module.exports.personalloan_post = (req, res) => {
+  const userData = {
+    ...req.body,
+    images: req.files.map(file => file.path)
+  };
+
+  const personalloan = new PersonalLoan(userData);
+
+  personalloan.save()
+  .then(result => {
+    res.redirect('/index');
+  })
+  .catch(err => {
+    console.log(err);
+  });      
+  
+}
 
 module.exports.businessloan_post = (req, res) => {
-  res.send('businessloan');
+  const userData = {
+    ...req.body,
+    images: req.files.map(file => file.path)
+  };
+
+  const businessloan = new BusinessLoan(userData);
+
+  businessloan.save()
+  .then(result => {
+    res.redirect('/index');
+  })
+  .catch(err => {
+    console.log(err);
+  });  
 }

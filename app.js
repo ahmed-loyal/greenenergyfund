@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 const PORT = 10000;
 
@@ -16,8 +17,10 @@ const app = express();
 
 //static files and middleware
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+
 
 //register view engine
 app.use(expressLayout);

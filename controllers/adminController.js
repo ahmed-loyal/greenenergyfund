@@ -1,4 +1,6 @@
 const User = require("../models/User");
+const PersonalLoan = require('../models/Personalloan');
+const BusinessLoan = require('../models/Businessloan');
 const jwt = require('jsonwebtoken');
 const adminLayout = '../views/layouts/admin';
 const adminForm = '../views/layouts/adminform';
@@ -89,14 +91,24 @@ module.exports.dashboard_get = (req, res) => {
 };
 
 module.exports.personalloandata_get = (req, res) => {
-  res.render('admin/personalloandata', { title: 'Personal Loans', layout: adminLayout});
+  PersonalLoan.find().sort({ createdAt: -1 })
+    .then(result => {
+      res.render('admin/personalloandata', { personalloans: result, title: 'Personal Loans', layout: adminLayout});
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 module.exports.businessloandata_get = (req, res) => {
-  res.render('admin/businessloandata', { title: 'Business Loans', layout: adminLayout});
+  BusinessLoan.find().sort({ createdAt: -1 })
+    .then(result => {
+      res.render('admin/businessloandata', { businessloans: result, title: 'Personal Loans', layout: adminLayout});
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
-
-
 
 module.exports.logout_get = (req, res) => {
   res.cookie('jwt', '', { maxAge: 1 });

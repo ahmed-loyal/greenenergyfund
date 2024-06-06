@@ -25,11 +25,11 @@
 
         <thead>
             <tr class="heading">
-                <th>SL NO</th>
                 <th>Business Name</th>
                 <th>Email</th>
                 <th>Mobile</th>
                 <th>Country</th>
+                <th>Industry Type</th>
                 <th>Applied Date</th>
                 <th>Amount</th>
                 <th>Action</th>
@@ -40,6 +40,30 @@
         <tbody class="userInfo">
             <tr class="data-hidden"><td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td></tr>
             <tr>
+
+                <% if (businessloans.length > 0) { %>
+                    <% businessloans.forEach(businessloan => { %>
+                      <!-- <a class="single" href="/blogs/<%= blog._id %>"> -->
+                        <td><%= businessloan.businessname %></td>
+                        <td><%= businessloan.email %></td>
+                        <td><%= businessloan.phonenumber %></td>
+                        <td><%= businessloan.country %></td>
+                        <td><%= businessloan.indsutrytype %></td>
+                        <td><%= businessloan.createdAT %></td>
+                        <td><%= businessloan.requestamount %></td>
+                        <td>
+                            <button><i class="fa-regular fa-eye"></i></button>
+                            <button><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                      <!-- </a> -->
+                    <% }) %>
+                <% } else { %>
+                    <td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td>
+                <% } %>
+            </tr>
+
+            <!-- <tr>
                 <td>1</td>
                 <td>John Doe</td>
                 <td>dreey@greenenergy.com</td>
@@ -82,22 +106,7 @@
                     <button><i class="fa-regular fa-pen-to-square"></i></button>
                     <button><i class="fa-regular fa-trash-can"></i></button>
                 </td>
-            </tr>
-
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>dreey@greenenergy.com</td>
-                <td>+2349045454545</td>
-                <td>United State</td>
-                <td>03-08-2024</td>
-                <td>$25000</td>
-                <td>
-                    <button><i class="fa-regular fa-eye"></i></button>
-                    <button><i class="fa-regular fa-pen-to-square"></i></button>
-                    <button><i class="fa-regular fa-trash-can"></i></button>
-                </td>
-            </tr>
+            </tr> -->
         </tbody>
 
     </table>
