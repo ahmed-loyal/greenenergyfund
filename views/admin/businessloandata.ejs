@@ -38,10 +38,11 @@
 
 
         <tbody class="userInfo">
-            <tr>
-                <% if (businessloans.length > 0) { %>
-                    <% businessloans.forEach(businessloan => { %>
-                      <!-- <a class="single" href="/blogs/<%= blog._id %>"> -->
+           
+            <% if (businessloans.length > 0) { %>
+                <% businessloans.forEach(businessloan => { %>
+                    <tr>
+                    <!-- <a class="single" href="/blogs/<%= businessloan._id %>"> -->
                         <td><%= businessloan.businessname %></td>
                         <!-- <td><%= businessloan.email %></td> -->
                         <td><%= businessloan.phonenumber %></td>
@@ -50,16 +51,17 @@
                         <td><%= businessloan.createdAT %></td>
                         <td><%= businessloan.requestamount %></td>
                         <td>
-                            <button><i class="fa-regular fa-eye"></i></button>
+                            <button id="modalBtn"><i class="fa-regular fa-eye"></i></button>
                             <button><i class="fa-regular fa-pen-to-square"></i></button>
                             <button><i class="fa-regular fa-trash-can"></i></button>
                         </td>
-                      <!-- </a> -->
-                    <% }) %>
-                <% } else { %>
-                    <td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td>
-                <% } %>
-            </tr>
+                    <!-- </a> -->
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <td class="empty" colspan="11">No data <i class="fa-solid fa-folder"></i></td>
+            <% } %>
+            
 
             <tr>
                 <td>Green Energy</td>

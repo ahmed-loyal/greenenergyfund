@@ -164,7 +164,7 @@
                         </div>
                         <div>
                             <label for="businessstartdate">Business Start Date*</label>
-                            <input id="businessstartdate" name="businessstartdate" class="mt-10" type="text" required>
+                            <input id="businessstartdate" name="businessstartdate" class="mt-10" type="text" placeholder="MM/DD/YYYY"  required>
                             <p>Please enter business start date. Format: MM/DD/YYYY eg. 12/01/1999</p>
                         </div>
                     </div>
@@ -319,14 +319,14 @@
                         <div id="inputContainer">
                             <label for="ninnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
                             <input id="ninnumber" name="ninnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number" required>
-                            <p>Please enter National Identity Number</p>
+                            <p>Please enter National Identity Number according to the format provided</p>
                         </div>
                     </div>
 
                     <div class="name-input mt-10">   
                         <div>
                             <label for="dob">DOB <span class="required">(Required)</span></label>
-                            <input id="dob" name="dob" class="mt-10" type="text" required>
+                            <input id="dob" name="dob" class="mt-10" type="text" placeholder="MM/DD/YYYY"  required>
                             <p>Please enter dae of birth. Format: MM/DD/YYYY eg. 12/01/1999</p>
                         </div>
                         
@@ -707,8 +707,9 @@
                     <!-- Image uploader -->
                     <div class="image-area">
                         <input id="images" type="file" name="images" accept="image/*" multiple required hidden>
-                        <button class="upload-btn">Select Files</button>
+                        <button type="button" class="upload-btn">Select Files</button>
                     </div>
+                    <div class="file-list"></div>
 
                     <!--Submit-->
                     <div class="btns-group">
@@ -721,7 +722,7 @@
 
             <p class="form-text">
                 This site is managed exclusively by Greenenergy Fund. 
-                Agents act solely as a referring partners and do not guarantee or underwrite Bank Breezy services. 
+                Agents act solely as a referring partners and do not guarantee or underwrite Green Energy Fund services. 
                 By entering your mobile number you consent that we may contact you on your mobile to help facilitate your application.
             </p>
         </div>     
@@ -731,8 +732,24 @@
     <script>
         const uploadBtn = document.querySelector('.upload-btn');
         const inputFile = document.querySelector('#images');
-
+        const fileList = document.querySelector('.file-list');
+    
         uploadBtn.addEventListener('click', function () {
         inputFile.click();
         });
+    
+        inputFile.addEventListener('change', function () {
+            const files = inputFile.files;
+            if (files.length > 0) {
+              for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const p = document.createElement('p');
+                p.textContent = file.name;
+                fileList.appendChild(p);
+              }
+            }
+            // Reset the input value to allow the same file to be uploaded again if needed
+            // No need to reset the input value since we support multiple file uploads at once
+            // inputFile.value = '';
+          });
     </script>

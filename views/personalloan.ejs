@@ -72,12 +72,14 @@
 
                             <div class="country-input-container">
                                 <input type="radio" name="country" value="AU" required>
+                                
                                 <div class="country-radio-tile">
                                     <img src="/img/australia-1296727_640.png"></img>
                                 </div>
                                 <h4>Australia</h4>
                             </div>
                         </div>
+                        
                     </div>
 
                     <div class="home-address mt-10">
@@ -110,7 +112,7 @@
                         <div id="inputContainer">
                             <label for="ninnumber">SSN / SIN / NIN / TFN<span class="required">(Required)</span></label>
                             <input id="ninnumber" name="ninnumber" class="mt-10" type="text" placeholder="Enter Country Identity Number" required>
-                            <p>Please enter your National Identity Number</p>
+                            <p>Please enter your National Identity Number according to the format provided</p>
                         </div>
                         
                     </div>
@@ -118,7 +120,7 @@
                     <div class="name-input mt-10">   
                         <div>
                             <label for="dob">DOB <span class="required">(Required)</span></label>
-                            <input id="dob" name="dob" class="mt-10" type="text" required>
+                            <input id="dob" name="dob" class="mt-10" type="text" placeholder="MM/DD/YYYY" required>
                             <p>Please enter date of birth. Format: MM/DD/YYYY eg. 12/01/1999</p>
                         </div>
 
@@ -478,7 +480,7 @@
                     <!-- Image uploader -->
                     <div class="image-area">
                         <input id="images" name="images" type="file" accept="image/*" multiple required hidden>
-                        <button class="upload-btn">Select Files</button>
+                        <button  type="button" class="upload-btn">Select Files</button>
                     </div>
                     <div class="file-list"></div>
 
@@ -494,7 +496,7 @@
 
             <p class="form-text">
                 This site is managed exclusively by Greenenergy Fund. 
-                Agents act solely as a referring partners and do not guarantee or underwrite Bank Breezy services. 
+                Agents act solely as a referring partners and do not guarantee or underwrite Green Energy Fund services. 
                 By entering your mobile number you consent that we may contact you on your mobile to help facilitate your application.
             </p>
         </div>     
@@ -521,6 +523,7 @@
           }
         }
         // Reset the input value to allow the same file to be uploaded again if needed
+        // No need to reset the input value since we support multiple file uploads at once
         // inputFile.value = '';
       });
 </script>

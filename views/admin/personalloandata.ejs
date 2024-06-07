@@ -42,16 +42,16 @@
             <tr>
                 <% if (personalloans.length > 0) { %>
                     <% personalloans.forEach(personalloan => { %>
-                      <!-- <a class="single" href="/blogs/<%= blog._id %>"> -->
+                      <!-- <a class="single" href="/blogs/<%= personalloan._id %>"> -->
                         <td><%= personalloan.firstname %> <%= personalloan.lastname %></td>
                         <td><%= personalloan.email %></td>
                         <td><%= personalloan.phonenumber %></td>
                         <td><%= personalloan.country %></td>
                         <td><%= personalloan.dob %></td>
-                        <td><%= personalloan.createdAT %></td>
+                        <td><%= personalloan.createdAt %></td>
                         <td><%= personalloan.loanamount %></td>
                         <td>
-                            <button><i class="fa-regular fa-eye" id="mmodalBtn"></i></button>
+                            <button id="modalBtn"><i class="fa-regular fa-eye"></i></button>
                             <button><i class="fa-regular fa-pen-to-square"></i></button>
                             <button><i class="fa-regular fa-trash-can"></i></button>
                         </td>

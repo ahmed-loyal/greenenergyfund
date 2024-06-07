@@ -33,7 +33,7 @@ module.exports.personalloan_post = (req, res) => {
 
   personalloan.save()
   .then(result => {
-    res.redirect('/index');
+    res.redirect('/applyloan');
   })
   .catch(err => {
     console.log(err);
@@ -51,7 +51,7 @@ module.exports.businessloan_post = (req, res) => {
 
   businessloan.save()
   .then(result => {
-    res.redirect('/index');
+    res.redirect('/applyloan');
   })
   .catch(err => {
     console.log(err);
