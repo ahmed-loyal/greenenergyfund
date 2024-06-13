@@ -941,6 +941,49 @@ select.invalid + p{
 }
 
 
+/* 404 page */
+.not-found{
+  text-align: center;
+  padding: 50px;
+}
+
+.not-found h1{
+  font-size:7rem ;
+  font-weight: 900;
+}
+
+.not-found p{
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.not-found a{
+  color: #2b9348;
+}
+
+/* Application completed message */
+.app-completed{
+  text-align: center;
+  padding: 20px;
+}
+
+.app-completed img{
+  display: block;
+  max-width: 25%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.app-completed h1{
+  margin: 10px 0;
+  font-size: 2rem;
+}
+
+.app-completed p{
+  margin: 10px 0;
+  font-size: 1rem ;
+}
+
 /* @ Media Query */
 @media screen and (max-width: 600px) {
     .header h1{
@@ -1054,4 +1097,7 @@ select.invalid + p{
       left: 25%;
     }
 
+    .app-completed img{
+      max-width: 50%;
+    }
   }

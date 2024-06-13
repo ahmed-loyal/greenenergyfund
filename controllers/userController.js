@@ -33,7 +33,7 @@ module.exports.personalloan_post = (req, res) => {
 
   personalloan.save()
   .then(result => {
-    res.redirect('/applyloan');
+    res.redirect('/applicationcompleted');
   })
   .catch(err => {
     console.log(err);
@@ -51,9 +51,13 @@ module.exports.businessloan_post = (req, res) => {
 
   businessloan.save()
   .then(result => {
-    res.redirect('/applyloan');
+    res.redirect('/applicationcompleted');
   })
   .catch(err => {
     console.log(err);
   });  
+}
+
+module.exports.applicationcompleted_get = (req, res) => {
+  res.render('applicationcompleted', { title: 'Application COmpleted Successfully'});
 }

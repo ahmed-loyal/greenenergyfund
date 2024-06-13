@@ -28,5 +28,6 @@ router.get('/businessloan', userController.businessloan_get);
 router.get('/personalloan', userController.personalloan_get);
 router.post('/personalloan', upload.array('images', 3), userController.personalloan_post);
 router.post('/businessloan', upload.array('images', 3), userController.businessloan_post);
+router.get('/applicationcompleted', userController.applicationcompleted_get);
 
 module.exports = router;

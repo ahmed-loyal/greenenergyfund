@@ -86,8 +86,20 @@ module.exports.admin_post = async (req, res) => {
   }
 };
 
-module.exports.dashboard_get = (req, res) => {
-  res.render('admin/dashboard', { title: 'GreenEnergy Dashboard', layout: adminLayout});
+module.exports.dashboard_get = async (req, res) => {
+  try{
+    const personalLoanCount = await PersonalLoan.countDocuments({});
+    const businessLoanCount = await BusinessLoan.countDocuments({});
+    res.render('admin/dashboard', {
+      title: 'GreenEnergy Dashboard',
+      personalLoanCount: personalLoanCount,
+      businessLoanCount: businessLoanCount,
+      layout: adminLayout
+    });
+  }catch(err){
+    res.status(500).json({ error: err.message });
+  }
+  // res.render('admin/dashboard', { title: 'GreenEnergy Dashboard', layout: adminLayout});
 };
 
 module.exports.personalloandata_get = (req, res) => {
@@ -114,3 +126,25 @@ module.exports.logout_get = (req, res) => {
   res.cookie('jwt', '', { maxAge: 1 });
   res.redirect('/admin');
 };
+
+module.exports.personalloandata_delete = (req, res) =>{
+  const id = req.params.id;
+  PersonalLoan.findByIdAndDelete(id)
+    .then(result => {
+      res.json({ redirect: '/personalloandata' });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+module.exports.businessloandata_delete = (req, res) =>{
+  const id = req.params.id;
+  BusinessLoan.findByIdAndDelete(id)
+    .then(result => {
+      res.json({ redirect: '/businessloandata' });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}; 
