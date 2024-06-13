@@ -59,5 +59,5 @@ module.exports.businessloan_post = (req, res) => {
 }
 
 module.exports.applicationcompleted_get = (req, res) => {
-  res.render('applicationcompleted', { title: 'Application COmpleted Successfully'});
+  res.render('applicationcompleted', { title: 'Application Completed Successfully'});
 }
