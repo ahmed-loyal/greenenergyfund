@@ -92,7 +92,7 @@
                                         <div class="gallery">
                                             <% personalloan.images.forEach(image => { %>
                                             <div style="margin: 10px;">
-                                                <img src="<% image %>" alt="Uploaded Documents" class="uploaded-img">
+                                                <img src="<%= image %>" alt="Uploaded Documents" class="uploaded-img">
                                             </div>
                                             <% }) %>
                                         </div>
@@ -130,7 +130,7 @@
 
 <script>
     //Handle delete
-    const trashcan = document.querySelector('button.delete');
+    const trashcan = document.querySelector('a.delete');
 
     trashcan.addEventListener('click', (e) => {
       const endpoint = `/personalloandata/${trashcan.dataset.doc}`;

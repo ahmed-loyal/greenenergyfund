@@ -13,8 +13,8 @@ router.get('/dashboard', requireAuth, adminController.dashboard_get);
 router.get('/personalloandata', requireAuth, adminController.personalloandata_get);
 router.get('/businessloandata', requireAuth, adminController.businessloandata_get);
 router.get('/logout', adminController.logout_get);
-router.delete('/:id', adminController.personalloandata_delete);
-router.delete('/:id', adminController.businessloandata_delete);
+router.delete('/personalloandata/:id', adminController.personalloandata_delete);
+router.delete('/businessloandata/:id', adminController.businessloandata_delete);
 
 
 module.exports = router;

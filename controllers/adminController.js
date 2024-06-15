@@ -134,7 +134,7 @@ module.exports.personalloandata_delete = (req, res) =>{
       res.json({ redirect: '/personalloandata' });
     })
     .catch(err => {
-      console.log(err);
+      res.status(404).render('404', {title: 'page not found'});
     });
 };
 
@@ -145,6 +145,6 @@ module.exports.businessloandata_delete = (req, res) =>{
       res.json({ redirect: '/businessloandata' });
     })
     .catch(err => {
-      console.log(err);
+      res.status(404).render('404', {title: 'page not found'});
     });
 }; 
