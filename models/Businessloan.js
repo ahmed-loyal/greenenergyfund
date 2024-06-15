@@ -155,7 +155,18 @@ const businessLoanSchema = new Schema({
     type: String,
     required: true
   },
-  images: [String],
+  bankStatement: {
+    type: String,
+    required: true
+  },
+  idFront: {
+    type: String,
+    required: true
+  },
+  idBack: {
+    type: String,
+    required: true
+  }
 }, { timestamps: true });
 
 const BusinessLoan = mongoose.model('BusinessLoan', businessLoanSchema);

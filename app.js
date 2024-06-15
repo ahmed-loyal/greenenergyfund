@@ -17,6 +17,8 @@ const app = express();
 
 //static files and middleware
 app.use(express.static('public'));
+// Serve static files from the "uploads" directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());

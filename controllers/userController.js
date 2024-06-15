@@ -26,9 +26,11 @@ module.exports.businessloan_get = (req, res) => {
 module.exports.personalloan_post = (req, res) => {
   const userData = {
     ...req.body,
-    images: req.files.map(file => file.path)
+    bankStatement: req.files.bankStatement ? req.files.bankStatement[0].path : '',
+    idFront: req.files.idFront ? req.files.idFront[0].path : '',
+    idBack: req.files.idBack ? req.files.idBack[0].path : ''
   };
-
+  
   const personalloan = new PersonalLoan(userData);
 
   personalloan.save()
@@ -44,8 +46,11 @@ module.exports.personalloan_post = (req, res) => {
 module.exports.businessloan_post = (req, res) => {
   const userData = {
     ...req.body,
-    images: req.files.map(file => file.path)
+    bankStatement: req.files.bankStatement ? req.files.bankStatement[0].path : '',
+    idFront: req.files.idFront ? req.files.idFront[0].path : '',
+    idBack: req.files.idBack ? req.files.idBack[0].path : ''
   };
+  
 
   const businessloan = new BusinessLoan(userData);
 

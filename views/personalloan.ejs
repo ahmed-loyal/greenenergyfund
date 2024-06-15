@@ -161,8 +161,8 @@
                         
                         <div>
                             <label for="commethod">Choose a Preffered Communication Method</label>
-                            <select id="commethod" name="commethod" class="mt-10 form-select" required>
-                                <option value="" selected>Select from options</option>
+                            <select id="commethod"  name="commethod" class="mt-10 form-select" required>
+                                <option value="" disabled selected>Select from options</option>
                                 <option> Email</option>
                                 <option>Phone</option>
                                 <option>Whatsapp</option>
@@ -255,9 +255,15 @@
 
                     <!-- Image uploader -->
                     <div class="image-area">
-                        <p class="mt-20 center">Upload Bank Statement, ID Card Front and ID Card Back</p>
-                        <input id="images" type="file" name="images" accept="image/*" multiple required hidden>
-                        <button type="button" class="upload-btn">Select All Files</button>
+                        <p class="mt-10 center">Upload Bank Statement, ID Card Front and ID Card Back</p>
+                        <input id="bankstatement" type="file" name="bankStatement" accept="image/*" required hidden>
+                        <button id="uploadbtn1" type="button" class="upload-btn">Upload Bank Statement</button>
+
+                        <input id="idfront" type="file" name="idFront" accept="image/*" required hidden>
+                        <button id="uploadbtn2" type="button" class="upload-btn2">Upload ID Front</button>
+
+                        <input id="idback" type="file" name="idBack" accept="image/*" required hidden>
+                        <button id="uploadbtn3" type="button" class="upload-btn3">Upload ID Back</button>
                     </div>
                     <div class="file-list"></div>
 
@@ -312,114 +318,105 @@
 </div>
 
 <script>
-    const uploadBtn = document.querySelector('.upload-btn');
-    const inputFile = document.querySelector('#images');
-    const fileList = document.querySelector('.file-list');
-    let uploadedFiles = [];
+    const maxFileSize = 2 * 1024 * 1024; // 2MB in bytes
+    let uploadedFiles = {
+        bankstatement: null,
+        idfront: null,
+        idback: null
+    };
 
-    uploadBtn.addEventListener('click', function () {
-        inputFile.click();
+    function handleUpload(inputId, buttonId, displayName) {
+        const inputFile = document.getElementById(inputId);
+        const uploadBtn = document.getElementById(buttonId);
+        const fileList = document.querySelector('.file-list');
 
-    });
+        uploadBtn.addEventListener('click', function () {
+            inputFile.click();
+        });
 
-    inputFile.addEventListener('change', function () {
-        const files = inputFile.files;
-        const maxFileSize = 2 * 1024 * 1024; // 2MB in bytes
-        const maxFiles = 3;
+        inputFile.addEventListener('change', function () {
+            const file = inputFile.files[0];
 
-        if (files.length > 0) {
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                if (file.size > maxFileSize) {
-                    alert(`File ${file.name} exceeds 2MB limit. Please upload a smaller file.`);
-                    return;
-                }
-
-                if (uploadedFiles.length >= maxFiles) {
-                    alert('You can only upload a maximum of 3 files.');
-                    return;
-                }
-
-                uploadedFiles.push(file);
-                const p = document.createElement('p');
-                p.textContent = file.name;
-
-                const removeBtn = document.createElement('button');
-                removeBtn.textContent = 'Remove';
-                removeBtn.addEventListener('click', function () {
-                    const index = uploadedFiles.indexOf(file);
-                    if (index > -1) {
-                        uploadedFiles.splice(index, 1);
-                        fileList.removeChild(p);
-                        updateUploadBtn();
-                    }
-                });
-
-                p.appendChild(removeBtn);
-                fileList.appendChild(p);
-                updateUploadBtn();
+            if (file && file.size > maxFileSize) {
+                alert(`File ${file.name} exceeds 2MB limit. Please upload a smaller file.`);
+                inputFile.value = ''; // Clear the input
+                return;
             }
-        }
 
-        // Ensure the input value is cleared after files are added to the list
-        // inputFile.value = '';
-    });
-
-    function updateUploadBtn() {
-        const totalFiles = uploadedFiles.length;
-
-        switch (totalFiles) {
-            case 3:
-                alert("3 files uploaded: Please ensure you have uploaded the correct documents. If not please remove and select all files again for upload");
-                uploadBtn.innerHTML = 'Uploads Complete';
-                uploadBtn.disabled = true;
+            if (file) {
+                if (uploadedFiles[inputId]) {
+                    removeFile(inputId);
+                }
+                uploadedFiles[inputId] = file;
+                uploadBtn.innerHTML = 'Upload Complete';
                 uploadBtn.style.backgroundColor = '#2b9348';
-                break;
-            case 2:
-                alert("Please remove and reselect all three files for upload.");
-                uploadBtn.innerHTML = 'Select All 3 Files';
-                uploadBtn.disabled = false;
+                displayUploadedFile(file, inputId, displayName);
+                checkAllUploadsComplete();
+            }
+        });
+
+        function displayUploadedFile(file, inputId, displayName) {
+            const p = document.createElement('p');
+            p.setAttribute('data-file-id', inputId);
+            p.textContent = `${displayName}: ${file.name} `;
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = 'Remove';
+            removeBtn.addEventListener('click', function () {
+                removeFile(inputId);
+                fileList.removeChild(p);
+                uploadBtn.innerHTML = `Upload ${displayName}`;
                 uploadBtn.style.backgroundColor = '#666';
-                break;
-            case 1:
-                alert("Please remove and reselect all three files for upload.");
-                uploadBtn.innerHTML = 'Select All 3 Files';
-                uploadBtn.disabled = false;
-                uploadBtn.style.backgroundColor = '#666';
-                break;;
-            default:
-            uploadBtn.innerHTML = 'Select All Files';
+            });
+
+            p.appendChild(removeBtn);
+            fileList.appendChild(p);
+        }
+
+        function removeFile(inputId) {
+            uploadedFiles[inputId] = null;
+            inputFile.value = '';
         }
     }
 
-    function submitFiles() {
-        const formData = new FormData();
+    function checkAllUploadsComplete() {
+        const allComplete = Object.values(uploadedFiles).every(file => file !== null);
 
-        uploadedFiles.forEach(file => {
-            formData.append('files', file);
-        });
-
-        fetch('/personalloan', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+        if (allComplete) {
+            alert("All files uploaded successfully. You can proceed.");
+        }
     }
 
-    // submitFiles();
-    // Add event listener to the proceed button
-    const proceedBtn = document.querySelector('#submitBtn');
-    proceedBtn.addEventListener('click', function () {
-        if (uploadedFiles.length === 3) {
-            submitFiles();
-        } else {
-            alert('Please upload exactly 3 files before proceeding.');
-        }
-    });
+    handleUpload('bankstatement', 'uploadbtn1', 'Bank Statement');
+    handleUpload('idfront', 'uploadbtn2', 'ID Front');
+    handleUpload('idback', 'uploadbtn3', 'ID Back');
+
+    // const proceedBtn = document.querySelector('#submitBtn');
+    // proceedBtn.addEventListener('click', function () {
+    //     if (Object.values(uploadedFiles).every(file => file !== null)) {
+    //         submitFiles();
+    //     } else {
+    //         alert('Please upload all three files before proceeding.');
+    //     }
+    // });
+
+    // function submitFiles() {
+    //     const formData = new FormData();
+    //     for (const [key, file] of Object.entries(uploadedFiles)) {
+    //         formData.append(key, file);
+    //     }
+
+    //     fetch('/personalloan', {
+    //         method: 'POST',
+    //         body: formData
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
+    // }
+
 </script>

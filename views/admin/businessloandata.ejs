@@ -38,7 +38,6 @@
 
 
         <tbody class="userInfo">
-           
             <% if (businessloans.length > 0) { %>
                 <% businessloans.forEach(businessloan => { %>
                     <tr>
@@ -49,78 +48,12 @@
                         <td><%= businessloan.requestamount %></td>
                         <td><%= businessloan.createdAT %></td> 
                         <td>
-                            <button type="button" id="modalBtn" data-target="#dataModal<%= businessloan._id %>"><i class="fa-regular fa-eye"></i></button>
+                            <button type="button" class="modalBtn" data-target="#dataModal<%= businessloan._id %>"><i class="fa-regular fa-eye"></i></button>
                             <button><i class="fa-regular fa-pen-to-square"></i></button>
                             <button type="button"><a class="delete" data-doc="<%= businessloan._id %>"><i class="fa-regular fa-trash-can"></i></a></button>
                         </td>
                     </tr>
-
-                    <!-- The Modal -->
-                    <div id="dataModal<%= personalloan._id %>" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                        
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h2 class="modal-title">User Details</h2>
-                                <span class="close">&times;</span>
-                            </div> 
-                            <div class="modal-body">
-                                <p><strong>Applied Date:</strong> <%= personalloan.createdAT %></p>
-                                <p><strong>Business Name:</strong> <%= businessloan.businessname %></p>
-                                <p><strong>Business Legal Name:</strong> <%= businessloan.businesslegalname %></p>
-                                <p><strong>Business Country:</strong> <%= businessloan.businesscountry %></p>
-                                <p><strong>Business Address:</strong> <%= businessloan.businessaddress %></p>
-                                <p><strong>Business City:</strong> <%= businessloan.businesscity %></p>
-                                <p><strong>Business State:</strong> <%= businessloan.businessstate %></p>
-                                <p><strong>Business Zip Code:</strong> <%= businessloan.businesszipcode %></p>
-                                <p><strong>Business Mobile:</strong> <%= businessloan.businessphonenumber %></p>
-                                <p><strong>Business Website:</strong> <%= businessloan.businesswebsite %></p>
-                                <p><strong>Business Tax ID:</strong> <%= businessloan.taxidnumber %></p>
-                                <p><strong>Business Annual Revenue:</strong> <%= businessloan.annualrevenue %></p>
-                                <p><strong>Entity:</strong> <%= businessloan.entity %></p>
-                                <p><strong>Industry Type:</strong> <%= businessloan.industrytype %></p>
-                                <p><strong>Business Start Date:</strong> <%= businessloan.businessstartdate %></p>
-                                <p><strong>Request Amount:</strong> <%= businessloan.requestamount %></p>
-                                <p><strong>Use of Fund:</strong> <%= businessloan.useoffund %></p>
-                                <p><strong>Business Ownership:</strong> <%= businessloan.businessownership %></p>
-
-                                <h2 class="busdata-title">Personal Information</h2>
-
-                                <p><strong>Name:</strong> <%= businessloan.firstname %> <%= businessloan.lastname %></p>
-                                <p><strong>Email:</strong> <%= businessloan.email %></p>
-                                <p><strong>Mobile:</strong>  <%= businessloan.phonenumber %></p>
-                                <p><strong>Country:</strong> <%= businessloan.country %></p>
-                                <p><strong>Home Address:</strong> <%= businessloan.homeaddress %></p>
-                                <p><strong>State:</strong> <%= businessloan.state %></p>
-                                <p><strong>City:</strong> <%= businessloan.city %></p>
-                                <p><strong>Zip Code:</strong> <%= businessloan.zipcode %></p>
-                                <p><strong>National Identity Number:</strong> <%= businessloan.ninnumber %></p>
-                                <p><strong>DOB:</strong> <%= businessloan.dob %></p>
-                                <p><strong>Loan Amount:</strong> <%= businessloan.loanamount %></p>
-                                <p><strong>Lowest Revenue:</strong> <%= businessloan.lowestrevenue %></p>
-                                <p><strong>Informed Method:</strong> <%= businessloan.informedmethod %></p>
-                                <p><strong>Credit Score:</strong> <%= businessloan.creditscore %></p>
-                                <p><strong>Communication Method:</strong> <%= businessloan.commethod %></p>
-                                <p><strong>Bank Account:</strong> <%= businessloan.bankaccount %></p>
-                                <p><strong>Credit Card:</strong> <%= businessloan.creditcard %></p>
-                                <p><strong>Account Name:</strong> <%= businessloan.accountname %></p>
-                                <p><strong>Fund Type:</strong> <%= businessloan.fundtype %></p>
-                                <p><strong>Monthly Revenue:</strong> <%= businessloan.monthlyrevenue %></p>
-                                <p>
-                                    <strong>Uploaded Documents:</strong>
-                                    <div class="gallery">
-                                        <% businessloan.images.forEach(image => { %>
-                                        <div style="margin: 10px;">
-                                            <img src="<%= image %>" alt="Uploaded Documents" class="uploaded-img">
-                                        </div>
-                                        <% }) %>
-                                    </div>
-                                </p>  
-                            </div>
-                            <a href="#" class="close-btn">Close</a> 
-                        </div>
-                    </div>
+                    
                 <% }) %>
             <% } else { %>
                 <tr>
@@ -130,6 +63,81 @@
         </tbody>
 
     </table>
+
+    <!-- The Modal -->
+    <% businessloans.forEach(businessloan => { %>
+        <div id="dataModal<%= businessloan._id %>" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+            
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h2 class="modal-title">User Details</h2>
+                    <span class="close">&times;</span>
+                </div> 
+                <div class="modal-body">
+                    <p><strong>Applied Date:</strong> <%= personalloan.createdAT %></p>
+                    <p><strong>Business Name:</strong> <%= businessloan.businessname %></p>
+                    <p><strong>Business Legal Name:</strong> <%= businessloan.businesslegalname %></p>
+                    <p><strong>Business Country:</strong> <%= businessloan.businesscountry %></p>
+                    <p><strong>Business Address:</strong> <%= businessloan.businessaddress %></p>
+                    <p><strong>Business City:</strong> <%= businessloan.businesscity %></p>
+                    <p><strong>Business State:</strong> <%= businessloan.businessstate %></p>
+                    <p><strong>Business Zip Code:</strong> <%= businessloan.businesszipcode %></p>
+                    <p><strong>Business Mobile:</strong> <%= businessloan.businessphonenumber %></p>
+                    <p><strong>Business Website:</strong> <%= businessloan.businesswebsite %></p>
+                    <p><strong>Business Tax ID:</strong> <%= businessloan.taxidnumber %></p>
+                    <p><strong>Business Annual Revenue:</strong> <%= businessloan.annualrevenue %></p>
+                    <p><strong>Entity:</strong> <%= businessloan.entity %></p>
+                    <p><strong>Industry Type:</strong> <%= businessloan.industrytype %></p>
+                    <p><strong>Business Start Date:</strong> <%= businessloan.businessstartdate %></p>
+                    <p><strong>Request Amount:</strong> <%= businessloan.requestamount %></p>
+                    <p><strong>Use of Fund:</strong> <%= businessloan.useoffund %></p>
+                    <p><strong>Business Ownership:</strong> <%= businessloan.businessownership %></p>
+
+                    <h2 class="busdata-title">Personal Information</h2>
+
+                    <p><strong>Name:</strong> <%= businessloan.firstname %> <%= businessloan.lastname %></p>
+                    <p><strong>Email:</strong> <%= businessloan.email %></p>
+                    <p><strong>Mobile:</strong>  <%= businessloan.phonenumber %></p>
+                    <p><strong>Country:</strong> <%= businessloan.country %></p>
+                    <p><strong>Home Address:</strong> <%= businessloan.homeaddress %></p>
+                    <p><strong>State:</strong> <%= businessloan.state %></p>
+                    <p><strong>City:</strong> <%= businessloan.city %></p>
+                    <p><strong>Zip Code:</strong> <%= businessloan.zipcode %></p>
+                    <p><strong>National Identity Number:</strong> <%= businessloan.ninnumber %></p>
+                    <p><strong>DOB:</strong> <%= businessloan.dob %></p>
+                    <p><strong>Loan Amount:</strong> <%= businessloan.loanamount %></p>
+                    <p><strong>Lowest Revenue:</strong> <%= businessloan.lowestrevenue %></p>
+                    <p><strong>Informed Method:</strong> <%= businessloan.informedmethod %></p>
+                    <p><strong>Credit Score:</strong> <%= businessloan.creditscore %></p>
+                    <p><strong>Communication Method:</strong> <%= businessloan.commethod %></p>
+                    <p><strong>Bank Account:</strong> <%= businessloan.bankaccount %></p>
+                    <p><strong>Credit Card:</strong> <%= businessloan.creditcard %></p>
+                    <p><strong>Account Name:</strong> <%= businessloan.accountname %></p>
+                    <p><strong>Fund Type:</strong> <%= businessloan.fundtype %></p>
+                    <p><strong>Monthly Revenue:</strong> <%= businessloan.monthlyrevenue %></p>
+                    <p>
+                        <strong>Uploaded Documents:</strong>
+                        <div class="gallery">
+                            <div style="margin: 10px;">
+                                <img src="<%= businessloan.bankStatement %>" alt="Uploaded Documents" class="uploaded-img">
+                            </div>
+                            <div style="margin: 10px;">
+                                <img src="<%= businessloan.idFront %>" alt="Uploaded Documents" class="uploaded-img">
+                            </div>
+                            <div style="margin: 10px;">
+                                <img src="<%= businessloan.idBack %>" alt="Uploaded Documents" class="uploaded-img">
+                            </div>
+                        </div>
+                    </p>  
+                </div>
+                <a href="#" class="close-btn">Close</a> 
+            </div>
+        </div>
+    <% }) %>
+
+
 
 
     <footer>
@@ -150,18 +158,49 @@
   
   
   <script>
-    //Handle delete
-    const trashcan = document.querySelector('a.delete');
 
-    trashcan.addEventListener('click', (e) => {
-      const endpoint = `/businessloandata/${trashcan.dataset.doc}`;
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all delete buttons
+        const deleteBtns = document.querySelectorAll('a.delete');
 
-      fetch(endpoint, {
-        method: 'DELETE',
-      })
-      .then(response => response.json())
-      .then(data => window.location.href = data.redirect)
-      .catch(err => console.log(err));
+        // Attach click event to each delete button
+        deleteBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+
+                const docId = this.getAttribute('data-doc'); // Get document ID to delete
+
+                // Confirm deletion with user (optional)
+                if (confirm('Are you sure you want to delete this item?')) {
+                    const endpoint = `/businessloandata/${docId}`; // Construct delete endpoint
+
+                    fetch(endpoint, {
+                        method: 'DELETE',
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Redirect or handle success as needed
+                        window.location.href = data.redirect; // Redirect to success page or reload
+                    })
+                    .catch(err => console.error('Error deleting item:', err));
+                }
+            });
+        });
     });
+
+
+    //Handle delete
+    // const trashcan = document.querySelector('a.delete');
+
+    // trashcan.addEventListener('click', (e) => {
+    //   const endpoint = `/businessloandata/${trashcan.dataset.doc}`;
+
+    //   fetch(endpoint, {
+    //     method: 'DELETE',
+    //   })
+    //   .then(response => response.json())
+    //   .then(data => window.location.href = data.redirect)
+    //   .catch(err => console.log(err));
+    // });
     
 </script>
